@@ -1,2 +1,2 @@
 # web
-web informatorio
+web informatorio.
