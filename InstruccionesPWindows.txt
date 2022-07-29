@@ -1,1 +1,0 @@
-Cambiar la extension del archivo ong/local.txt a local.py
