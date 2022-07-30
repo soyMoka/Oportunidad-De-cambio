@@ -1,3 +1,0 @@
-source .venong/bin/Activate
-python manage.py runserver
-
