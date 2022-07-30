@@ -1,0 +1,6 @@
+source .venv/Scripts/activate
+python manage.py runserver
+
+cuenta django
+user: grupo9
+password: grupo9grupo9
