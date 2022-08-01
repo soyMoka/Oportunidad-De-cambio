@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#ACA ES EL DIRECTORIO DE LOS ARCHIVOS ESTATICOS PARA EL INDEX
+STATICFILES_DIRS = ['./static']
+
 
 # Application definition
 
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'ong.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:\informatorio\web\ong\web'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
