@@ -5,6 +5,8 @@ source /.vomg/bin/Activate
 >>>>>>> html
 python manage.py runserver
 
+Se soluciono lo de la estructura
+
 cuenta django
 user: grupo9
 password: grupo9grupo9
