@@ -15,13 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-<<<<<<< HEAD
-from ong.vista import index
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('index/',index)
-=======
 from ong.vista import *
 
 urlpatterns = [
@@ -32,5 +25,4 @@ urlpatterns = [
     path('mision/', causes, name ='causes'),
     path('blog/', blog, name = 'blog'),
     path('contacto/', contact, name = 'contact'),
->>>>>>> html
 ]
