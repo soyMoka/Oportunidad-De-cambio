@@ -1,4 +1,4 @@
-source .venv/Scripts/activate
+source /.vomg/bin/Activate
 python manage.py runserver
 
 cuenta django
