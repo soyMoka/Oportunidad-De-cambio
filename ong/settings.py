@@ -28,10 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 #ACA ES EL DIRECTORIO DE LOS ARCHIVOS ESTATICOS PARA EL INDEX
-<<<<<<< HEAD
-STATICFILES_DIRS = ['./static']
-=======
->>>>>>> html
+
 
 
 # Application definition
@@ -61,11 +58,7 @@ ROOT_URLCONF = 'ong.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
-        'DIRS': ['C:\informatorio\web\ong\web'],
-=======
         'DIRS': ['templates'],
->>>>>>> html
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,12 +121,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-<<<<<<< HEAD
-STATIC_URL = '/static/'
-=======
+
 STATIC_URL = 'static/'
-#
->>>>>>> html
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
