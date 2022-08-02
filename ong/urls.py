@@ -19,7 +19,7 @@ from ong.vista import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/',index),
-    path('', index),
+    path('index/',index, name="index"),
+    path('', index, name="index"),
     path('about', about),
 ]
