@@ -2,12 +2,13 @@ python -m venv .vomg
 
 Windows:
 
-.vomg/Script/activate.bat
+	.vomg/Script/activate.bat
 
 Linux/unix
 
-source .vomg/bin/activate
+	source .vomg/bin/activate
 
+pip install -r requirements.txt
 
 python manage.py runserver
 
