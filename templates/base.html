@@ -183,33 +183,36 @@
     <div class="site-section">
       <div class="container">
         <div class="heading-20219 mb-5">
-          <h2 class="title text-cursive">Latest Event</h2>
+          <h2 class="title text-cursive">{% block titulo-contenido-2 %} {% endblock %}</h2>
         </div>
 
         <div class="row">
           <div class="col-md-6">
             <div class="event-29191 mb-5">
-              <a href="#" class="d-block mb-3"><img src="{% static 'images/img_1.jpg' %}" alt="Image" class="img-fluid rounded"></a>
+              <a href="#" class="d-block mb-3">
+                {% block contenido-2 %} {% endblock %}
+                {% comment %} <img src="{% static 'images/img_1.jpg' %}" alt="Image"   {% endcomment %}
+                </a>
               <div class="px-3 d-flex">
-
+{% comment %} 
                 <div class="bg-primary p-3 d-inline-block text-center rounded mr-4 date">
                   <span class="text-white h3 m-0 d-block">22</span>
                   <span class="text-white small">Oct 2019</span>
-                </div>
+                </div> {% endcomment %}
 
-                <div>
+                {% comment %} <div>
                   <div class="mb-3">
                     <span class="mr-3"> <span class="icon-clock-o mr-2 text-muted"></span>9:30 AM &mdash; 11:30 AM</span>
                     <span> <span class="icon-room mr-2 text-muted"></span>Ghana Africa</span>
                   </div>
                   <h3><a href="single.html">Ratione Delectus Assumenda Rem Modi Quaerat Laborum</a></h3>
-                </div>
+                </div> {% endcomment %}
 
               </div>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="event-29191 mb-5">
+            {% comment %} <div class="event-29191 mb-5">
               <a href="#" class="d-block mb-3"><img src="images/img_2.jpg" alt="Image" class="img-fluid rounded"></a>
               <div class="px-3 d-flex">
 
@@ -227,7 +230,7 @@
                 </div>
 
               </div>
-            </div>
+            </div> {% endcomment %}
           </div>
         </div>
       </div>
@@ -237,7 +240,7 @@
       <div class="container">
         <div class="row align-items-stretch">
           <div class="col-md-6">
-            <img src="images/img_1.jpg" alt="Image" class="img-fluid shadow">
+            {% comment %} <img src="images/img_1.jpg" alt="Image" class="img-fluid shadow"> {% endcomment %}
           </div>
           <div class="col-md-6">
             <div class="bg-white h-100 p-4 shadow">
