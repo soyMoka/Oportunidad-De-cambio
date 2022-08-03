@@ -1,8 +1,14 @@
-<<<<<<< HEAD
-source .venv/Scripts/activate
-=======
-source /.vomg/bin/Activate
->>>>>>> html
+python -m venv .vomg
+
+Windows:
+
+.vomg/Script/activate.bat
+
+Linux/unix
+
+source .vomg/bin/activate
+
+
 python manage.py runserver
 
 Se soluciono lo de la estructura
