@@ -1,8 +1,10 @@
+(si da error, fijarse en el apartado de bugs en discord)
+
 python -m venv .vomg
 
 Windows:
 
-	.vomg/Script/activate.bat
+	source .vomg/Scripts/Activate
 
 Linux/unix
 
