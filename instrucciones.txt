@@ -1,4 +1,5 @@
 (si da error, fijarse en el apartado de bugs en discord)
+[estar atentos a la version de mysql...]
 
 python -m venv .vomg
 
