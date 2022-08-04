@@ -14,6 +14,7 @@ Linux/unix
 
 pip install -r requirements.txt
 
+Abrir MYSQL workbench -> create database ongdb;
 python manage.py runserver
 
 Se soluciono lo de la estructura
