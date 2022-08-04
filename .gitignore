@@ -1,3 +1,5 @@
 .vomg
 ong/__pychache__
-
+apps/noticias/__pycache__
+apps/comentarios/__pycache__
+apps/usuarios/__pycache__

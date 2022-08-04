@@ -1,5 +1,6 @@
 (si da error, fijarse en el apartado de bugs en discord)
 [estar atentos a la version de mysql...]
+ong/settings poner la contraseña que tienen de su mysql
 
 python -m venv .vomg
 
