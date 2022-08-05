@@ -8,7 +8,6 @@ class Categoria(models.Model):
 
 # Create your models here.
 class Noticia(models.Model):
-    #ID = ('ID',max_length = 99999)
     titulo = models.CharField(max_length=250, null=False)
     fecha = models.DateTimeField(auto_now_add=True)
     texto = models.TextField(null=True)

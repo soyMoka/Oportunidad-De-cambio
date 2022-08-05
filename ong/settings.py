@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ong',
     'apps.noticias',
-    #'apps.comentarios',
-    #'apps.usuarios',
+    'apps.comentarios',
+    'apps.usuarios',
 ]
 
 MIDDLEWARE = [
@@ -86,8 +86,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ongdb',
         'USER': 'root',
-        #'PASSWORD': 'root',
-        'PASSWORD': '123321q',
+        'PASSWORD': 'root',
+        #'PASSWORD': '123321q',
         'HOST': 'localhost',
         'PORT': '',
     }

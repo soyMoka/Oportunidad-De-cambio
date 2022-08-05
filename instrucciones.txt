@@ -1,6 +1,7 @@
-(si da error, fijarse en el apartado de bugs en discord)
-[estar atentos a la version de mysql...]
-ong/settings poner la contraseña que tienen de su mysql
+[NO OLVIDARSE DE: create DATABASE ongdb]
+-ong/settings poner la contraseña que tienen de su mysql
+-[estar atentos a la version de mysql...]
+-(si da error, fijarse en el apartado de bugs en discord)
 
 python -m venv .vomg
 
