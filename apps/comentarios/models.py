@@ -1,6 +1,6 @@
 from django.db import models
-from apps import Noticia
-from apps import Usuario
+from apps.noticias.models   import Noticia
+from apps.usuarios.models import Usuario
 #from apps.usuarios.models import Usuario
 # Create your models here.
 
