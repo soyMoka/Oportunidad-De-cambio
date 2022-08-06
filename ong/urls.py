@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from ong.vista import *
 
 urlpatterns = [
@@ -25,4 +25,9 @@ urlpatterns = [
     path('mision/', causes, name ='causes'),
     path('blog/', blog, name = 'blog'),
     path('contacto/', contact, name = 'contact'),
+    #path('ckeditor/', include('ckeditor_uploader.urls')),
+    #path('noticia/', include('apps.noticias.urls')),
+    #path('usuario/', include('apps.usuarios.urls')),
+    #path('comentario/', include('apps.comentarios.urls')),
 ]
+
