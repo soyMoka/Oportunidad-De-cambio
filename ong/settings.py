@@ -86,8 +86,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ongdb',
         'USER': 'root',
-        'PASSWORD': 'root',
-        #'PASSWORD': '123321q',
+        #'PASSWORD': 'root',
+        'PASSWORD': '123321q',
         'HOST': 'localhost',
         'PORT': '',
     }

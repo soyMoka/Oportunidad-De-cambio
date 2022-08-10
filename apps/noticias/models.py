@@ -12,10 +12,7 @@ class Noticia(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
     texto = models.TextField(null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
-    
-    #class Meta:
-    #    verbose_name = 'Noticia'
-    #    verbose_name_plural = 'Noticias'
-
+    imagen = models.ImageField(upload_to='noticia', default='noticia/default.png')
+  
     def __str__(self):
         return self.titulo
