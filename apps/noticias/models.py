@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=250, null=False)
@@ -10,7 +11,7 @@ class Categoria(models.Model):
 class Noticia(models.Model):
     titulo = models.CharField(max_length=250, null=False)
     fecha = models.DateTimeField(auto_now_add=True)
-    texto = models.TextField(null=True)
+    texto = RichTextField(null=False)
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
     activo = models.BooleanField(default=True)
     imagen = models.ImageField(upload_to='noticia', default='noticia/default.png')

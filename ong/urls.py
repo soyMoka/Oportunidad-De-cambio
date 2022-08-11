@@ -29,7 +29,7 @@ urlpatterns = [
     path('mision/', causes, name ='causes'),
     path('blog/', blog, name = 'blog'),
     path('contacto/', contact, name = 'contact'),
-    #path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     #path('noticia/', include('apps.noticias.urls')),
     #path('usuario/', include('apps.usuarios.urls')),
     #path('comentario/', include('apps.comentarios.urls')),
