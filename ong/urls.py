@@ -29,5 +29,5 @@ urlpatterns = [
     #path('noticia/', include('apps.noticias.urls')),
     #path('usuario/', include('apps.usuarios.urls')),
     #path('comentario/', include('apps.comentarios.urls')),
-]
+] 
 
