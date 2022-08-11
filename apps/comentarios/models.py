@@ -9,7 +9,7 @@ from apps.usuarios.models import Usuario
 class Comentario(models.Model):
     noticia = models.ForeignKey(Noticia, on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    texto = models.TextField(max_length=200)
+    texto = models.TextField(max_length=200)        #comentario
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)    
 
