@@ -87,7 +87,8 @@ DATABASES = {
         'NAME': 'ongdb',
         'USER': 'root',
         #'PASSWORD': 'root',
-        'PASSWORD': '123321q',
+        #'PASSWORD': '123321q',
+        'PASSWORD': 'muma2208',
         'HOST': 'localhost',
         'PORT': '',
     }
