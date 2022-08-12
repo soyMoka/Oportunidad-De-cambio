@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'apps.noticias',
     'apps.comentarios',
     'apps.usuarios',
+    'apps.cuentas',
     
 ]
 
@@ -90,8 +91,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ongdb',
         'USER': 'root',
-        'PASSWORD': 'root',
-        #'PASSWORD': '123321q',
+        #'PASSWORD': 'root',
+        'PASSWORD': '123321q',
         #'PASSWORD': 'muma2208',
         'HOST': 'localhost',
         'PORT': '',

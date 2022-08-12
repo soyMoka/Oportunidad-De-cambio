@@ -21,6 +21,7 @@ from django.urls import path, include
 from .vista import *
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/',index,name='index'),
@@ -29,7 +30,12 @@ urlpatterns = [
     path('mision/', causes, name ='causes'),
     path('blog/', blog, name = 'blog'),
     path('contacto/', contact, name = 'contact'),
+    path('login/', login, name = 'login'),
+    path('register/', register, name = 'register'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+
+    
+    #path('cuentas/', include('apps.cuentas.urls'))
     #path('noticia/', include('apps.noticias.urls')),
     #path('usuario/', include('apps.usuarios.urls')),
     #path('comentario/', include('apps.comentarios.urls')),
