@@ -33,12 +33,9 @@ urlpatterns = [
     path('login/', login, name = 'login'),
     path('register/', register, name = 'register'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-
-    
-    #path('cuentas/', include('apps.cuentas.urls'))
-    #path('noticia/', include('apps.noticias.urls')),
-    #path('usuario/', include('apps.usuarios.urls')),
-    #path('comentario/', include('apps.comentarios.urls')),
+    # URL , Carpeta de origen
+    path('noticias/', include('apps.noticias.urls')),
+  
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
   
 urlpatterns += staticfiles_urlpatterns()
