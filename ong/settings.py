@@ -27,7 +27,7 @@ ALLOWED_HOSTS = []
 
 #ACA ES EL DIRECTORIO DE LOS ARCHIVOS ESTATICOS PARA EL INDEX
 
-
+AUTH_USER_MODEL = 'usuarios.Usuario'
 
 # Application definition
 
