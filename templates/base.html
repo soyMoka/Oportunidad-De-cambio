@@ -51,7 +51,7 @@
             <!-- SUB ENCABEZADO DEL HEADER -->
 
             <div class="site-logo">
-              <a href="{% url 'index' %}" class="text-white">OCAC</a>
+              <a href="index" class="text-white"></a><img src="{% static 'images/logo.png' %}" width="140" height="140" alt="Image" class="img-fluid rounded">
             </div>
 
             <nav class="site-navigation text-left ml-auto " role="navigation">
@@ -103,6 +103,54 @@
           <a href="#" class="d-block mb-3"><img src="{% static 'images/img_3.jpg' %}" alt="Image" class="img-fluid rounded"></a>
         </div>
         
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{% static 'images/img_2.jpg' %}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-md-5 ml-auto">
+            <h3 class="text-cursive mb-4">{% block titulito %}  
+              {% endblock %}</h3>
+            <p>{% block descripcion1 %}
+              {% endblock %}</p>
+            <p>{% block descripcion2 %}
+              {% endblock %}</p>
+            <p>{% block descripcion3 %}
+              {% endblock %}</p>
+            <p>{% block descripcion4 %}
+              {% endblock %}</p>
+            <p>{% block descripcion5 %}
+              {% endblock %}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 ml-auto">
+            <h3 class="text-cursive mb-4">{% block titulito2 %}  
+              {% endblock %}</h3>
+            <p>{% block 2descripcion1 %}
+              {% endblock %}</p>
+            <p>{% block 2descripcion2 %}
+              {% endblock %}</p>
+            <p>{% block 2descripcion3 %}
+              {% endblock %}</p>
+            <p>{% block 2descripcion4 %}
+              {% endblock %}</p>
+            <p>{% block 2descripcion5 %}
+              {% endblock %}</p>
+          </div>
+          <div class="col-md-6">
+            <img src="{% static 'images/img_1.jpg' %}" alt="Image" class="img-fluid">
+          </div>
+        </div>
       </div>
     </div>
 
