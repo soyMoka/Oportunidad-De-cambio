@@ -7,4 +7,4 @@ from django.views.generic import CreateView
 class RegistrarUsuarios(CreateView):
 	model = Usuario
 	form_class = registroUsuarios
-	template_name = 'usuario/registrar.html'
+	template_name = 'usuario/register.html'
