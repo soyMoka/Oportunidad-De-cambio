@@ -1,33 +1,23 @@
 {% extends "base.html" %}
+{% load static %}
 <!--HEAD-->
 
 {% block titulo %}
-    Nosotros - Nosotros
+    Misión 
 {% endblock %}
 <!--BODY-->
 {% block titulito %}
-    MISIÓN
-{% endblock %}
-{% block descripcion1 %}
-    - Fomentar el desarrollo de la educación, de la salud, y el bienestar social; 
-{% endblock %}
-{% block descripcion2 %}
-    - Lograr el mejoramiento de la calidad de vida.
-{% endblock %}
-{% block descripcion3 %}
-    - Estimular la participación cívica y solidaria.
-{% endblock %}
+    
+
 {% block descripcion4 %}
-    - Crear ámbitos de integración y recreación.
+    
 {% endblock %}
 {% block descripcion5 %}
-    - Promover la dignidad humana en toda su dimensión ética y cultural, 
-    particularmente la igualdad efectiva de oportunidades entre el hombre y la mujer 
-    y los derechos de la infancia. 
+    
 {% endblock %}
 
 {% block titulito2 %}
-    VISIÓN
+    
 {% endblock %}
 {% block 2descripcion1 %}
   Actualmente la ONG trabaja en tres instalaciones propias, 
@@ -47,6 +37,66 @@
   que brinda a la comunidad, el esfuerzo de quienes participamos y, 
   por el apoyo de quienes nos ayudan y acompañan.  
 {% endblock %}
+
+
+    <!-- Mision -->
+    <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="{% static 'images/img_2.jpg' %}" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-5 ml-auto">
+              <h3 class="text-cursive mb-4">
+                MISIÓN
+              </h3>
+              <p>    
+                - Fomentar el desarrollo de la educación, de la salud, y el bienestar social; 
+              </p>
+              <p>
+                - Lograr el mejoramiento de la calidad de vida.
+              </p>
+              <p>
+                - Estimular la participación cívica y solidaria.
+              </p>
+              <p>
+                - Crear ámbitos de integración y recreación.
+              </p>
+              <p>
+                - Promover la dignidad humana en toda su dimensión ética y cultural, 
+                particularmente la igualdad efectiva de oportunidades entre el hombre y la mujer 
+                y los derechos de la infancia. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Vision -->
+      <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 ml-auto">
+              <h3 class="text-cursive mb-4">
+                VISIÓN
+              </h3>
+              <p>{% block 2descripcion1 %}
+                {% endblock %}</p>
+              <p>{% block 2descripcion2 %}
+                {% endblock %}</p>
+              <p>{% block 2descripcion3 %}
+                {% endblock %}</p>
+              <p>{% block 2descripcion4 %}
+                {% endblock %}</p>
+              <p>{% block 2descripcion5 %}
+                {% endblock %}</p>
+            </div>
+            <div class="col-md-6">
+              <img src="{% static 'images/img_1.jpg' %}" alt="Image" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 {% block face-1 %}
