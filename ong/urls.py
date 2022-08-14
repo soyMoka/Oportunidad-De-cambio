@@ -31,11 +31,11 @@ urlpatterns = [
     path('mision/', causes, name ='causes'),
     path('blog/', blog, name = 'blog'),
     path('contacto/', contact, name = 'contact'),
-    path('login/', login, name = 'login'),
-    path('register/', register, name = 'register'),
+    
     path('ckeditor/', include('ckeditor_uploader.urls')),
     # URL , Carpeta de origen
     path('noticias/', include('apps.noticias.urls')),
+    path('usuarios/', include('apps.usuarios.urls')),
   
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
   

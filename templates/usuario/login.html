@@ -1,5 +1,6 @@
-{% comment %} {% extends 'base.html' %} {% endcomment %}
+
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,23 +17,14 @@
 		<h1>Inicio de sesión</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				{% comment %} <form action="{% url 'index' %}" method="post"> {% endcomment %}
+
                     <form action="#" method="post">
 					{% csrf_token %}
-					<input class="text" type="text" name="Username" placeholder="Usuario" required="">
-					{% comment %} <input class="text email" type="email" name="email" placeholder="Correo" required=""> {% endcomment %}
-					<input class="text" type="password" name="password" placeholder="Contraseña" required="">
-					{% comment %} <input class="text w3lpass" type="password" name="password" placeholder="Confirmar Contraseña" required=""> {% endcomment %}
-					{% comment %} <div class="wthree-text">
-						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span>Acepto los terminos y condiciones</span>
-						</label>
-						<div class="clear"> </div>
-					</div> {% endcomment %}
+					{{ form.as_p }}
 					<input type="submit" value="Iniciar Sesión">
+					
 				</form>
-				<p>¿No tienes una cuenta? <a href="{% url 'register' %}"> ¡Registrate ahora!</a></p>
+				<p>¿No tienes una cuenta? <a href="{% url 'usuarios/register' %}"> ¡Registrate ahora!</a></p>
 			</div>
 		</div>
 		
