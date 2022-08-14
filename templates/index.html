@@ -9,3 +9,16 @@
     OPORTUNIDAD DE CAMBIO 
     ASOCIACIÓN CIVIL
 {% endblock %}
+
+{% block contenido %}
+    {% if user.is_authenticated %}
+        
+        <h1>Hola {{ user.username }} buenas </h1>
+        {% if user.is_superuser %}
+            <h1>Estas logueado</h1>
+        {% endif %}
+    {% else %}
+        <h1>Hola invitado</h1>
+    {% endif %}
+
+{% endblock %}

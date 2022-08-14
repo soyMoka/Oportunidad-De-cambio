@@ -50,7 +50,7 @@
             <!-- SUB ENCABEZADO DEL HEADER -->
 
             <div class="site-logo">
-              <a href="index" class="text-white">OCAC</a>
+              <a href="{% url 'index' %}" class="text-white">OCAC</a>
             </div>
 
             <nav class="site-navigation text-left ml-auto " role="navigation">
@@ -105,6 +105,9 @@
         
       </div>
     </div>
+
+    {% block contenido %}
+    {% endblock %}
     
     <div class="site-section">
       <div class="container">
