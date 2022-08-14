@@ -15,7 +15,9 @@
 		<h1>Registro de usuario</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
+				{% comment %} <form action="{% url 'index' %}" method="post"> {% endcomment %}
+                    <form action="#" method="post">
+					{% csrf_token %}
 					<input class="text" type="text" name="Username" placeholder="Usuario" required="">
 					<input class="text email" type="email" name="email" placeholder="Correo" required="">
 					<input class="text" type="password" name="password" placeholder="Contraseña" required="">
