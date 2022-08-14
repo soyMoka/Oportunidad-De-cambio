@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'apps.noticias',
     'apps.comentarios',
     'apps.usuarios',
-    'apps.cuentas',
     
 ]
 
@@ -89,8 +88,8 @@ DATABASES = {
         'NAME': 'ongdb',
         'USER': 'root',
         #'PASSWORD': 'root',
-        #'PASSWORD': '123321q',
-        'PASSWORD': '7ux3r0.890',
+        'PASSWORD': '123321q',
+        #'PASSWORD': '7ux3r0.890',
         #'PASSWORD': 'muma2208',
         'HOST': 'localhost',
         'PORT': '',
