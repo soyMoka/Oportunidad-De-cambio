@@ -8,7 +8,7 @@
 <!-- body -->
 {% block contenido %}
 
-<div class="col">
+<div class="col" style = 'text-align: center;'>
     <form action="../../form-result.php" method="post" target="_blank">
 
         <h3 class="title text-cursive">
@@ -22,18 +22,22 @@
 </div>
     
     
-    {% if object_list %}
+    <div style = 'margin-left: 13%;margin-right: 13%; text-align: justify;'>
+        {% if object_list %}
                     
-        {% for p in object_list %}
+        
+            {% for p in object_list %}
 
-        <h1>{{p.titulo}}</h1>
-        {{p.texto|safe}}
-        <p>{{p.fecha}}</p>
+            <h1>{{p.titulo}}</h1>
+            {{p.texto|safe}}
+            <p>{{p.fecha}}</p>
 
-        {% endfor %}
+            {% endfor %}
+        
 
     {% else %}
         <h1>No se encontraron noticias</h1>
     {% endif %}
+    </div>
 
 {% endblock %}
