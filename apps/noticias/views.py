@@ -1,7 +1,9 @@
+from mailbox import NoSuchMailboxError
+from unicodedata import name
 from django.shortcuts import render
 from .models import Noticia, Categoria
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 # Create your views here.
 
@@ -35,4 +37,12 @@ def mostrarImgCat(request, categoria):
 class BorrarNoticia(DeleteView):
     model = Noticia
     template_name = 'noticias/borrar.html'
+    success_url = reverse_lazy('index')
+    
+    
+    
+class modificar(UpdateView):
+    model = Noticia
+    fields = ['titulo', 'texto', 'categoria', 'imagen']
+    template_name = 'noticias/modificar.html'
     success_url = reverse_lazy('index')

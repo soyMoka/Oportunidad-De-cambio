@@ -13,7 +13,7 @@
 {% block contenido %}
 
 <div class="main-container" style = 'margin-left: 14%;margin-right: 13%;margin-top: 2%; text-align: justify;'>
-    <h1>Borrar noticia</h1>
+    <h1>Borrar noticia {{ object }}</h1>
 
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
