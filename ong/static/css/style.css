@@ -176,6 +176,12 @@ html {
 .border-w-5 {
   border-width: 5px; }
 
+.dropdown-menu {
+  background-color:#1c2d37;
+  color: white;
+  margin-top: 0;
+}
+
 .primary-black--hover {
   background: #00a651;
   color: #fff; }

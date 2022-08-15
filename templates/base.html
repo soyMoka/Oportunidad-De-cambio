@@ -68,7 +68,17 @@
                 <li><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
                 <li><a href="{% url 'contact' %}" class="nav-link">Contacto</a></li>
                 
-                <li><a href="{% url 'apps.noticia:mostrar' %}" class="nav-link">Noticias</a></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Noticias
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item" href="{% url 'apps.noticia:mostrar' %}">Mostrar</a>
+                    <a class="dropdown-item" href="{% url 'apps.noticia:agregar' %}">Agregar</a>
+                    <a class="dropdown-item" href="{% url 'apps.noticia:agregar' %}">Editar</a>
+                    <a class="dropdown-item" href="{% url 'apps.noticia:agregar' %}">Borrar</a>
+                  </div>
+                </li>
 
                 <li><a href="{% url 'apps.usuario:login' %}" class="nav-link">Loguearse</a></li>
                 <li><a href="{% url 'apps.usuario:agregar' %}" class="nav-link">Registrarse</a></li>
@@ -93,45 +103,39 @@
     <footer class="site-footer bg-white">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-sm">
             <div class="row">
-              <div class="col-md-7">
-                <h2 class="footer-heading mb-4">About Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem modi, quaerat laborum id fugit blanditiis ratione delectus assumenda.</p>
-
+              <!--logo--> 
+              <div class="col-md-2">
+                <div class="site-logo">
+                  <a href="index" class="text-white"></a>
+                  <img src="{% static 'images/logo2.png' %}"  alt="Image" class="img-fluid rounded">
+                </div>
               </div>
-              <div class="col-md-4 ml-auto">
-                <h2 class="footer-heading mb-4">Features</h2>
+              <!--comunicate con nosotros-->
+              <div class="col-md-7 ml-auto">
+                <h2 class="footer-heading mb-3">Comunicate con nosotros</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li>
+                    <a href="index" class="text-white"></a><img src="{% static 'images/correo.png' %}" width="40" height="40" alt="Image" class="img-fluid rounded">
+                    <a href="#">oportinidaddecambiomachagai@gmail.com</a>
+                  </li>
+                  <li>
+                    <a href="index" class="text-white"></a><img src="{% static 'images/contacto.png' %}" width="40" height="40" alt="Image" class="img-fluid rounded">
+                    <a href="#">3734 403707</a>
+                  </li>
+                  <li>
+                    <a href="index" class="text-white"></a><img src="{% static 'images/ubicacion.png' %}" width="40" height="40" alt="Image" class="img-fluid rounded">
+                    <a href="#">LAS HERAS 345 MACHAGAI </a>
+                  </li>
                 </ul>
               </div>
-
             </div>
           </div>
-          <div class="col-md-4 ml-auto">
-
-            <div class="mb-5">
-              <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
-              <form action="#" method="post" class="footer-suscribe-form">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control rounded-0 border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Subscribe</button>
-                  </div>
-                </div>
-            </div>
-
-
-            <h2 class="footer-heading mb-4">Follow Us</h2>
-            <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+          <div class="col-md-3 ml-auto">
+            <h2 class="footer-heading mb-3">Seguinos en facebook</h2>
+            <a href="index" class="text-white"></a><img src="{% static 'images/facebook.png' %}" width="40" height="40" alt="Image" class="img-fluid rounded">
+                    <a href="#">oportunidadecambio</a>
             </form>
           </div>
         </div>
@@ -140,7 +144,7 @@
             <div class="pt-5">
               <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a target="_blank" >Informatorio_Grupo9</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             </div>

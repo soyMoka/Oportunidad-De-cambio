@@ -8,20 +8,20 @@
 <!-- body -->
 {% block contenido %}
 
-    <ol> Acciones para noticas
-        <li>
-            <a  name="Agregar" id="" class="btn btn-primary" href="{% url 'apps.noticia:agregar' %}" role="button" value = "Agregar">
-                Agregar
-            </a>
-        </li>
-        <li>
-            <a value = "Mostrar" name="Mostrar" id="" class="btn btn-primary" href="{% url 'apps.noticia:mostrar' %}" role="button">
-                Mostrar
-            </a>
-        </li>
-       
-    </ol>
+<div class="col">
+    <form action="../../form-result.php" method="post" target="_blank">
 
+        <h3 class="title text-cursive">
+  
+            Búsqueda por categoria: <input type="search" name="busqueda" placeholder="politica, evento, donación...">
+  
+            <input type="submit" value="Buscar">
+  
+        </h3>
+  </form>
+</div>
+    
+    
     {% if object_list %}
                     
         {% for p in object_list %}
