@@ -5,7 +5,7 @@
 <!-- head -->
 
     {% block titulo %}
-        Agregar - Noticias
+        Borrar - Noticias
     {% endblock %}
 
 <!-- body -->
@@ -17,10 +17,8 @@
 
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{form.media}}
-        {{form|crispy}}
-
-        <input class="btn btn-primary" type="submit" value="Agregar Noticia" style = 'margin-top: 2%;'>
+        <strong> Estas Seguro? </strong>
+        <button class="btn btn-secondaryy"> Borrar Noticia! </button>
 
     </form>
 

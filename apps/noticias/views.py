@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Noticia, Categoria
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from django.views.generic.list import ListView
 # Create your views here.
 
@@ -30,3 +30,9 @@ def mostrarImgCat(request, categoria):
 		'noticia': noticia,
     }
     return render(request,'noticias/mostrarImg.html', context)
+
+
+class BorrarNoticia(DeleteView):
+    model = Noticia
+    template_name = 'noticias/borrar.html'
+    success_url = reverse_lazy('index')
