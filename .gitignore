@@ -1,7 +1,9 @@
 .vomg
 __pychache__
 ong/__pycache__
+apps/noticias/migrations/__pycache__
 apps/noticias/__pycache__
-apps/comentarios/__pycache__
+apps/usuarios/migrations/__pycache__
 apps/usuarios/__pycache__
-apps/cuentas/__pycache__
+apps/comentarios/migrations/__pycache__
+apps/comentarios/__pycache__
