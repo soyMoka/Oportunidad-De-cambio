@@ -1836,7 +1836,13 @@ h1, h2, h3, h4, h5,
   .event-29191 h3 a {
     color: #000; }
 
-
+#demotext {
+  color: #FFFFFF;
+  
+  text-shadow: 3px 5px 2px #474747;
+  color: #FFFFFF;
+  
+  }
 
 
 
