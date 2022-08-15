@@ -56,7 +56,7 @@
 
             <nav class="site-navigation text-left ml-auto " role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                <li class="active"><a href="{% url 'index' %}" class="nav-link">Inicio</a></li>
+                <li><a href="{% url 'index' %}" class="nav-link">Inicio</a></li>
                 
                 <!-- el archivo del que viene se llama about.html -->
                 <li><a href="{% url 'about' %}" class="nav-link">¿Quienes somos?</a></li>
@@ -69,7 +69,7 @@
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Noticias
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1" >
                     <a class="dropdown-item" href="{% url 'apps.noticia:mostrar' %}">Mostrar</a>
                     <a class="dropdown-item" href="{% url 'apps.noticia:agregar' %}">Agregar</a>
                     <a class="dropdown-item" href="{% url 'apps.noticia:agregar' %}">Editar</a>
