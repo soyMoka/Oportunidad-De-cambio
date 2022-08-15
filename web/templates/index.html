@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!--HEAD-->
+
+{% block titulo %}
+    OCAC - Home
+{% endblock %}
+
+<!--BODY-->
+
+{% block contenido %}
+    <!-- carrusel -->
+
+<div class="owl-carousel-wrapper">
+
+    <div class="box-92819">
+      <h1 class="text-white mb-3" id="demotext" style = 'text-align: center;'>
+        OPORTUNIDAD DE CAMBIO 
+        ASOCIACIÓN CIVIL
+      </h1>
+    </div>
+
+    <div class="owl-carousel owl-1 ">
+      <!--  style="background-image: url('images/hero_1.jpg');" -->
+      <div class="ftco-cover-1 overlay">
+        <a href="#" class="d-block mb-3"><img src="{% static 'images/img_3.jpg' %}" alt="Image" class="img-fluid rounded"></a>
+      </div>
+      <div class="ftco-cover-1 overlay" >
+        <a href="#" class="d-block mb-3"><img src="{% static 'images/img_2.jpg' %}" alt="Image" class="img-fluid rounded"></a>
+      </div>
+      <div class="ftco-cover-1 overlay" >
+        <a href="#" class="d-block mb-3"><img src="{% static 'images/img_1.jpg' %}" alt="Image" class="img-fluid rounded"></a>
+      </div>
+      
+    </div>
+  </div>
+
+<div class="site-section">
+    <div class="container"> 
+      <div class="row mb-5 align-items-st">
+        <div class="col-md-4">
+          <div class="heading-20219">
+            <h2 class="title text-cursive">
+              {% block seccion-2-titulo %}
+              {% endblock %}
+            </h2>
+          </div>
+        </div>
+        <div class="col-md-8"> 
+      </div>
+    </div>
+</div>
+    
+{% endblock %}
+
+{% comment %}
+{% if user.is_authenticated %}
+        
+        <h1>Hola {{ user.username }} buenas </h1>
+        {% if user.is_superuser %}
+            <h1>Estas logueado</h1>
+        {% endif %}
+    {% else %}
+        <h1>Hola invitado</h1>
+    {% endif %}
+{% endcomment %}

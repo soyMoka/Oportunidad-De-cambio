@@ -1,0 +1,27 @@
+[NO OLVIDARSE DE: create DATABASE ongdb]
+-ong/settings poner la contraseña que tienen de su mysql
+-[estar atentos a la version de mysql...]
+-(si da error, fijarse en el apartado de bugs en discord)
+
+python -m venv .vomg
+
+Windows:
+
+	source .vomg/Scripts/Activate
+
+Linux/unix
+
+	source .vomg/bin/activate
+
+pip install -r requirements.txt
+
+Abrir MYSQL workbench -> create database ongdb;
+python manage.py runserver
+
+Se soluciono lo de la estructura
+
+cuenta django
+user: grupo9
+password: grupo9grupo9
+
+.
