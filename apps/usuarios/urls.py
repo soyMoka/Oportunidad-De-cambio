@@ -9,6 +9,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(),name="logout"),
     
     path('agregar/', RegistrarUsuarios.as_view() ,name="agregar"),
+
     path('modificar/<str:pk>', ModificarUsuario.as_view() ,name="modificar"),
     path('borrar/<int:pk>', BorrarUsuario.as_view() ,name="eliminar")
 ]

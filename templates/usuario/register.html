@@ -1,17 +1,15 @@
+{% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
-<!DOCTYPE html>
-<html lang="en">
 
+{% block titulo %}Registro de usuario{% endblock %}
+	
+{% block contenido %}
 
-<head>
-	<title>Registrar</title>
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 	<link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css" media="all" />
 
-</head>
-<body>
 	<!-- main -->
 	<div class="main-w3layouts wrapper">
 		<h1>Registro de usuario</h1>
@@ -53,6 +51,5 @@
 			<li></li>
 		</ul>
 	</div>
+{% endblock %}
 
-</body>
-</html>

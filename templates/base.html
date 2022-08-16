@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/aos.css' %}">
 
+    <link rel="stylesheet" href="../static/css/stylewhatsapp.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 
@@ -71,14 +74,25 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown1" >
                     <a class="dropdown-item" href="{% url 'apps.noticia:mostrar' %}">Mostrar</a>
+                    {% if user.is_authenticated and user.is_superuser %}
                     <a class="dropdown-item" href="{% url 'apps.noticia:agregar' %}">Agregar</a>
-                    <a class="dropdown-item" href="{% url 'apps.noticia:agregar' %}">Editar</a>
-                    <a class="dropdown-item" href="{% url 'apps.noticia:agregar' %}">Borrar</a>
+                    {% endif %}
                   </div>
                 </li>
 
-                <li><a href="{% url 'apps.usuario:login' %}" class="nav-link">Loguearse</a></li>
-                <li><a href="{% url 'apps.usuario:agregar' %}" class="nav-link">Registrarse</a></li>
+                {% comment %} Si no esta logueado {% endcomment %}
+                {% if user.is_authenticated == 0 %}
+
+                  <li><a href="{% url 'apps.usuario:login' %}" class="nav-link">Loguearse</a></li>
+                  <li><a href="{% url 'apps.usuario:agregar' %}" class="nav-link">Registrarse</a></li>
+
+                {% else %}
+
+                  <li><a href="{% url 'apps.usuario:logout' %}" class="nav-link">Cerrar sesion</a></li>
+
+                {% endif %}
+
+                
               
                 
 
@@ -97,6 +111,11 @@
     {% block contenido %}
     {% endblock %}
     
+    {% comment %} Whatsapp-floating-button {% endcomment %}
+    <a href="https://api.whatsapp.com/send?phone=543734403707&text=Hola%20Oportunidad%20de%20cambio" class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
     <footer class="site-footer bg-white">
       <div class="container">
         <div class="row">

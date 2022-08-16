@@ -1,17 +1,16 @@
-
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block titulo %}Inicio de Sesión{% endblock %}
 
-<head>
-	<title>Inicio de Sesión</title>
+{% block contenido %}
+	{% comment %} head {% endcomment %}
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 	<link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css" media="all" />
+	{% comment %} head {% endcomment %}
 
-</head>
-<body>
+	{% comment %} body {% endcomment %}
 	<!-- main -->
 	<div class="main-w3layouts wrapper">
 		<h1>Inicio de sesión</h1>
@@ -44,5 +43,6 @@
 		</ul>
 	</div>
 	
-</body>
-</html>
+
+{% endblock %}
+
