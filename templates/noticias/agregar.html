@@ -10,8 +10,12 @@
 
 <!-- body -->
 
-{% block contenido %}
 
+                    
+
+
+{% block contenido %}
+{% if user.is_superuser %}
 <div class="main-container" style = 'margin-left: 14%;margin-right: 13%;margin-top: 2%; text-align: justify;'>
     <h1>Crear Noticia</h1>
 
@@ -25,5 +29,7 @@
     </form>
 
 </div>
-
+{% else %}
+    <h1>Usted no es administrador</h1>
+{% endif %}
 {% endblock %}
