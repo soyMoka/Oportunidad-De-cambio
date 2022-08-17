@@ -3,6 +3,11 @@
 -[estar atentos a la version de mysql...]
 -(si da error, fijarse en el apartado de bugs en discord)
 
+Requisitos:
+	Python
+	PATH
+	PIP
+
 python -m venv .vomg
 
 Windows:
@@ -18,10 +23,19 @@ pip install -r requirements.txt
 Abrir MYSQL workbench -> create database ongdb;
 python manage.py runserver
 
+Crear la base de datos 'ongdb' en mysqlworkbench
+cambiar la contraseña en ong.settings
+
+python manage.py makemigrations
+python manage.py migrate
+
+
 Se soluciono lo de la estructura
 
 cuenta django
 user: grupo9
 password: grupo9grupo9
 
-.
+
+
+
