@@ -65,3 +65,17 @@ class modificar(UpdateView):
 class mostrarDetalleNoticia(DetailView):
     model = Noticia
     template_name = 'noticias/mostrarDetalleNoticia.html'
+
+
+
+class agregarCategoriaView(CreateView):
+    model = Categoria
+    template_name = 'noticias/agregarCategoria.html'
+    fields = '__all__'
+    success_url = reverse_lazy('index')
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Categoria.objects.all()
+        context = super(agregarCategoriaView, self).get_context_data(*args, **kwargs)
+        context['cat_menu'] = cat_menu
+        return  context
