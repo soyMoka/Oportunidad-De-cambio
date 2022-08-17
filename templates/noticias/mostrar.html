@@ -31,8 +31,13 @@
                 <h1>{{p.titulo}}</h1>
                 {{p.texto|safe}}
                 <p>{{p.fecha}}</p>
-                <a href='{% url 'apps.noticia:borrar' p.id %}'> Borrar </a>
-                <a href='{% url 'apps.noticia:modificar' p.id %}'> Editar </a>
+                <i class="fas fa-box    ">
+                    <h3>{{p.categoria}}<h3>
+                </i>
+                {% if user.is_superuser %}
+                    <a href='{% url 'apps.noticia:borrar' p.id %}'> Borrar </a>
+                    <a href='{% url 'apps.noticia:modificar' p.id %}'> Editar </a>
+                {% endif %}
             {% endfor %}
         
 

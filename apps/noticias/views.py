@@ -7,12 +7,22 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 # Create your views here.
 
+
+# ListaDenoticias = Noticia.objects.first()
+# TituloCategoria = Noticia.Categoria
+# Categorias = Noticia.objects.first()
+from django.shortcuts import render, get_object_or_404
+from django.utils import timezone
+
+def mostrarCategorias(request):
+    categories = Categoria.objects.all() # this will get all categories, you can do some filtering if you need (e.g. excluding categories without posts in it)
+    return render (request, 'noticias/mostrarCategorias.html', {'categories': categories}) # blog/category_list.html should be the template that categories are listed.
+
 class agregar(CreateView):
     model = Noticia
     fields = ['titulo', 'texto', 'categoria', 'activo', 'imagen']
     template_name = 'noticias/agregar.html'
     success_url = reverse_lazy('index')
-
 
 class mostrar(ListView):
     model = Noticia

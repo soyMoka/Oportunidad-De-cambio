@@ -21,7 +21,7 @@ from django.urls import path, include
 from .vista import *
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,6 +36,8 @@ urlpatterns = [
     # URL , Carpeta de origen
     path('noticias/', include('apps.noticias.urls')),
     path('usuarios/', include('apps.usuarios.urls')),
+
+
   
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
   

@@ -1,6 +1,9 @@
 from django.urls import path
 from .views import BorrarNoticia
 from . import views
+
+from django.conf.urls import include, url
+
 app_name = 'apps.noticia'
 
 urlpatterns = [
@@ -11,4 +14,6 @@ urlpatterns = [
     path('borrar/<int:pk>', BorrarNoticia.as_view(), name= 'borrar'),
     path('mostrarImg/', views.mostrarImg,name = 'mostrarImg'),
     path('mostrarImg/<str:categoria>', views.mostrarImgCat, name="mostrarCategoria"),
+    path('mostrarCategorias/', views.mostrarCategorias,name = 'mostrarCategorias'),
+  
 ]

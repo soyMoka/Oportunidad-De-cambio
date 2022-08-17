@@ -1,20 +1,91 @@
+{% extends 'base.html' %}
 {% load static %}
-{% if noticia %}
+
+
+{% block titulo %}
+    Noticias con imagenes
+{% endblock %}
+
+{% block contenido %}
+
+
+    {% if noticia %}    
+
+    <div class="col-lg-3 stretch-card grid-margin">
+        <div class="card">
+            <div class="card-body">
+            <h2>Category</h2>
+            <ul class="vertical-menu">
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">International</a></li>
+                <li><a href="#">Finance</a></li>
+                <li><a href="#">Health care</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Administration</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Game</a></li>
+                <li><a href="#">Art</a></li>
+                <li><a href="#">Kids</a></li>
+            </ul>
+            </div>
+        </div>
+        </div>
 				
     {% for p in noticia %}
-
-        <h1>{{p.titulo}}</h1>
-        <p>{{p.fecha}}</p>
-        <p>{{ p.imagen }}</p>
-        {% if p.imagen %}
-            <img src="{{ p.imagen.url }}"  width="550" height="400">
-        {% else %}
-            <img src="noticia/default.png"  width="550" height="400">
-        {% endif %}
-        {{p.texto|safe}}
-
+        p.fecha.hou
+        <div class="row" data-aos="fade-up" >
+            
+            <div class="col-lg-9 stretch-card grid-margin" style = 'margin-left:10%;margin-top:auto;'>
+            <div class="card">
+                <div class="card-body" >
+                <div class="row">
+                    <div class="col-sm-4 grid-margin">
+                    <div class="position-relative">
+                        <div class="rotate-img">
+                            {% if p.imagen %}
+                                <img
+                                    src="{{ p.imagen.url }}"
+                                    alt="thumb"
+                                    class="img-fluid"
+                                />
+                            {% else %}
+                                <img
+                                src="noticia/default.png"
+                                alt="thumb"
+                                class="img-fluid"
+                                />
+                            {% endif %}
+                        </div>
+                        <div class="badge-positioned">
+                        <span class="badge badge-danger font-weight-bold"
+                            >{{p.categoria}}</span
+                        >
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-8  grid-margin">
+                    <h2 class="mb-2 font-weight-600">
+                        {{p.titulo}}
+                    </h2>
+                    <div class="fs-13 mb-2">
+                        <span class="mr-2">{{p.fecha}}</span>
+                    </div>
+                    <p class="mb-0">
+                        {{p.texto|safe}}
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
     {% endfor %}
 
-{% else %}
-    <h1>No hay noticias de esta categoria</h1>
-{% endif %}
+    {% else %}
+        <h1>No hay noticias</h1>
+    {% endif %}
+
+{% endblock %}
