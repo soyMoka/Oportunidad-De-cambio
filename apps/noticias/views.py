@@ -5,6 +5,7 @@ from .models import Noticia, Categoria
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
+from django.views.generic import DetailView
 # Create your views here.
 
 
@@ -59,3 +60,8 @@ class modificar(UpdateView):
     fields = ['titulo', 'texto', 'categoria', 'imagen']
     template_name = 'noticias/modificar.html'
     success_url = reverse_lazy('index')
+
+
+class mostrarDetalleNoticia(DetailView):
+    model = Noticia
+    template_name = 'noticias/mostrarDetalleNoticia.html'

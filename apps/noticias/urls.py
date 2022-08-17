@@ -15,5 +15,6 @@ urlpatterns = [
     path('mostrarImg/', views.mostrarImg,name = 'mostrarImg'),
     path('mostrarImg/<str:categoria>', views.mostrarImgCat, name="mostrarCategoria"),
     path('mostrarCategorias/', views.mostrarCategorias,name = 'mostrarCategorias'),
-  
+    path('detalle/<int:pk>', views.mostrarDetalleNoticia.as_view(), name= 'mostrarDetalleNoticia'),
+    
 ]
