@@ -11,6 +11,7 @@ from django.views.generic.list import ListView
 # ListaDenoticias = Noticia.objects.first()
 # TituloCategoria = Noticia.Categoria
 # Categorias = Noticia.objects.first()
+
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 
@@ -24,12 +25,17 @@ class agregar(CreateView):
     template_name = 'noticias/agregar.html'
     success_url = reverse_lazy('index')
 
+
+
 class mostrar(ListView):
     model = Noticia
     template_name = 'noticias/mostrar.html'
 
 def mostrarImg(request): # parecido a un get
-    noticia = Noticia.objects.all()
+
+    # Lista de noticias
+    #noticia = Noticia.objects.all()
+    noticia = Noticia.objects.order_by("-fecha")
     context = {
         'noticia' : noticia
     }
@@ -43,13 +49,10 @@ def mostrarImgCat(request, categoria):
     }
     return render(request,'noticias/mostrarImg.html', context)
 
-
 class BorrarNoticia(DeleteView):
     model = Noticia
     template_name = 'noticias/borrar.html'
     success_url = reverse_lazy('index')
-    
-    
     
 class modificar(UpdateView):
     model = Noticia
