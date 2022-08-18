@@ -92,8 +92,8 @@ DATABASES = {
         'USER': 'root',
         #'PASSWORD': 'root',
         #'PASSWORD': '123321q',
-        #'PASSWORD': 'muma2208',
-        'PASSWORD': 'password', # soyMoka
+        'PASSWORD': 'muma2208',
+        #'PASSWORD': 'password', # soyMoka
         'HOST': 'localhost',
         'PORT': '',
     }

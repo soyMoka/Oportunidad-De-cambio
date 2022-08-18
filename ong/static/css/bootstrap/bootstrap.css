@@ -6447,7 +6447,7 @@ button.bg-dark:focus {
   .sticky-top {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 55;
     z-index: 1020; } }
 
 .sr-only {
