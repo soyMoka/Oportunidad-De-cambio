@@ -39,9 +39,16 @@ def mostrarImg(request): # parecido a un get
     # Lista de noticias
     #noticia = Noticia.objects.all()
     noticia = Noticia.objects.order_by("-fecha")
+        #intento mostrar categorias (listas)
+    listaDeCategorias = Categoria.objects.order_by('nombre')
+
+        #----------------------------------
+    
     context = {
-        'noticia' : noticia
-    }
+        'noticia' : noticia,
+        'listaDeCategorias': listaDeCategorias,
+    } 
+
     return render(request,'noticias/mostrarImg.html',context)
 
 def mostrarImgCat(request, categoria):
@@ -50,6 +57,7 @@ def mostrarImgCat(request, categoria):
     context = { 
 		'noticia': noticia,
     }
+
     return render(request,'noticias/mostrarImg.html', context)
 
 class BorrarNoticia(DeleteView):
