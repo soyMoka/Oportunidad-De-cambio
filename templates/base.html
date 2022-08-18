@@ -56,15 +56,13 @@
             <!-- SUB ENCABEZADO DEL HEADER -->
 
             <div class="site-logo">
-              <a href="index" class="text-white"></a><img src="{% static 'images/logo.png' %}" width="140" height="140" alt="Image" class="img-fluid rounded">
+              <a href="index" class="text-white"></a><img src="{% static 'images/logo_w.png' %}" width="140" height="140" alt="Image" class="img-fluid rounded">
             </div>
 
             <nav class="site-navigation text-left ml-auto " role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                <li><a href="{% url 'index' %}" class="nav-link">Inicio</a></li>
-                
-                <!-- el archivo del que viene se llama about.html -->
-                <li><a href="{% url 'about' %}" class="nav-link">¿Quienes somos?</a></li>
+                <li><a href="{% url 'index' %}" class="nav-link">¿Quienes somos?</a></li>
+        
 
                 <!-- el archivo del que viene se llama causes.html -->
                 <li><a href="{% url 'causes' %}" class="nav-link">Misión</a></li>
