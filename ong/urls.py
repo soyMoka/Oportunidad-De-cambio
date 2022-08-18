@@ -36,6 +36,7 @@ urlpatterns = [
     # URL , Carpeta de origen
     path('noticias/', include('apps.noticias.urls')),
     path('usuarios/', include('apps.usuarios.urls')),
+    
 
 
   

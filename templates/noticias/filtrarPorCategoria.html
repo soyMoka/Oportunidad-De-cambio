@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+
+{%block title%}- Ver post de {{ cates }}{%endblock%}
+
+{%block contenido%}
+
+<div class="etiquetas">
+    <ul >    
+        {% for cat in c %}   
+        <li><a href="{% url 'apps.noticia:filtrarCategoria' cat %}">{{cat}}</a></li>
+        {%endfor%}
+    </ul>
+</div>
+
+{% if noticiasFiltradas %}
+
+
+    <h1>
+        Posts de la categoría {{ cates }}
+    </h1>
+
+    {% for p in noticiasFiltradas reversed %}
+
+        {%include 'noticias/contenido.html' %}
+
+    {% endfor %}
+    
+    {% else %}
+    <h1>Disculpe, esta página no existe</h1>
+    {% endif %}
+    
+    
+{%endblock%}

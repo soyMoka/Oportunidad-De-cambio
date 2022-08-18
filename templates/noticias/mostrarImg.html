@@ -8,101 +8,43 @@
 
 {% block contenido %}
 
-    {% if noticia %}    
 
-    <div class="col-lg-3 stretch-card grid-margin">
-        <div class="card">
-            <div class="card-body">
-            <h2>Category</h2>
-            <ul class="vertical-menu">
-                <li><a href="#">Politics</a></li>
-                <li><a href="#">International</a></li>
-                <li><a href="#">Finance</a></li>
-                <li><a href="#">Health care</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Media</a></li>
-                <li><a href="#">Administration</a></li>
-                <li><a href="#">Sports</a></li>
-                <li><a href="#">Game</a></li>
-                <li><a href="#">Art</a></li>
-                <li><a href="#">Kids</a></li>
-            </ul>
-            </div>
+<div class="etiquetas">
+    <ul >    
+        {% for cat in cat_menu %}   
+        <li><a href="{% url 'apps.noticia:category_list' cat %}">{{cat}}</a></li>
+        {%endfor%}
+    </ul>
+</div>
+
+<div class="col-lg-3 stretch-card grid-margin">
+    <div class="card">
+        <div class="card-body">
+        <h2>Category</h2>
+        <ul class="vertical-menu">
+            <li><a href="#">Politics</a></li>
+            <li><a href="#">International</a></li>
+            <li><a href="#">Finance</a></li>
+            <li><a href="#">Health care</a></li>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Administration</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Game</a></li>
+            <li><a href="#">Art</a></li>
+            <li><a href="#">Kids</a></li>
+        </ul>
         </div>
-        </div>
-    
-    
-				
+    </div>
+    </div>
+
+
     {% for p in noticia %}
 
-        <div class="row" data-aos="fade-up" >
-            
-            <div class="col-lg-9 stretch-card grid-margin" style = 'margin-left:10%;margin-top:auto;'>
-            <div class="card">
-                <div class="card-body" >
-                <div class="row">
+        {%include 'noticias/contenido.html' %}
 
-                    <div class="col-sm-4 grid-margin">
-                    <div class="position-relative">
-
-                        <div class="rotate-img">
-                            {% if p.imagen %}
-                                <img
-                                    src="{{ p.imagen.url }}"
-                                    alt="thumb"
-                                    class="img-fluid"
-                                />
-                            {% else %}
-                                <img
-                                src="noticia/default.png"
-                                alt="thumb"
-                                class="img-fluid"
-                                />
-                            {% endif %}
-                        </div>
-                        <div class="badge-positioned">
-                        <span class="badge badge-danger font-weight-bold"
-                            >{{p.categoria}}</span
-                        >
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="col-sm-8  grid-margin">
-
-                    {% if user.is_superuser %}
-                        <button type="button" class="btn btn-danger">
-                            <a href='{% url 'apps.noticia:borrar' p.id %}' style = 'color:white'> Borrar </a>
-                        </button>
-                        <button type="button" class="btn btn-secondary">
-                            <a href='{% url 'apps.noticia:modificar' p.id %}' style = 'color:white;'> Editar </a>
-                        </button>
-                     
-                    {% endif %}
-                    
-                    <h2 class="mb-2 font-weight-600">
-                        {{p.titulo}}
-                    </h2>
-                    <div class="fs-13 mb-2">
-                        <span class="mr-2">{{p.fecha}}</span>
-                    </div>
-                    <p class="mb-0">
-                        {{p.texto|safe |slice:":200"}} ... 
-                        <br>
-                        <a href="{% url 'apps.noticia:mostrarDetalleNoticia' p.id  %}">Leer más</a>
-                    </p>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        
     {% endfor %}
 
-    {% else %}
-        <h1>No hay noticias</h1>
-    {% endif %}
 
 {% endblock %}

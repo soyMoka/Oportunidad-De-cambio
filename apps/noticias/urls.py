@@ -19,6 +19,6 @@ urlpatterns = [
     
     # Agregar categorias 
     path('agregarCategoria/', views.agregarCategoriaView.as_view(), name='agregar_categoria'),
-
+    path('categorias/<str:cates>', views.CategoryList, name='filtrarCategoria'),
 
 ]

@@ -1,6 +1,8 @@
 from mailbox import NoSuchMailboxError
 from unicodedata import name
 from django.shortcuts import render
+
+from apps import noticias
 from .models import Noticia, Categoria
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -67,7 +69,7 @@ class mostrarDetalleNoticia(DetailView):
     template_name = 'noticias/mostrarDetalleNoticia.html'
 
 
-
+#||CATEGORIAS --------------------------------#
 class agregarCategoriaView(CreateView):
     model = Categoria
     template_name = 'noticias/agregarCategoria.html'
@@ -79,3 +81,31 @@ class agregarCategoriaView(CreateView):
         context = super(agregarCategoriaView, self).get_context_data(*args, **kwargs)
         context['cat_menu'] = cat_menu
         return  context
+
+#-_-_-_-_-_-_-_-_-_| separador |_-_-_-_-_-_-_-_-_-
+
+def CategoryList(request, cates):
+    
+    cat = Categoria.objects.filter( nombre = cates)
+    if len(cat) > 0:
+        noticiasFiltradas = Noticia.objects.filter(categoria = cat[0].id)
+    c = []
+    for dic in Categoria.objects.values('nombre'):
+        
+        c.append(dic['nombre'])
+        
+
+    myContext = {
+        'c': c,
+        'cates':cates, 
+        'noticiasFiltradas':noticiasFiltradas,
+    }    
+
+        
+    return render(request, 'noticias/filtrarPorCategoria.html', myContext )
+
+#------------------ END CATEGORIAS ---------------------#
+
+
+
+
