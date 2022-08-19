@@ -8,71 +8,38 @@
 <!--BODY-->
 {% block contenido %}
     <!--Contactanos-->
-	<!--<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=2">-->
-<!--===============================================================================================-->
-<!-- 	<link rel="icon" type="image/png" href="../static/images/icons/favicon.ico"/> -->
-<!--===============================================================================================-->
-	<!--<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">-->
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../static/vendor/css-hamburgers/hamburgers.min.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../static/vendor/select2/select2.min.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../static/css/util.css">
+	
+ <!-- <link rel="stylesheet" type="text/css" href="../static/css/util.css">-->
   <link rel="stylesheet" type="text/css" href="../static/css/main.css">
   <!--===============================================================================================-->
 <body>
-  
 
   <div class="contact1">
 		<div class="container-contact1">
-			<div class="contact1-pic js-tilt" data-tilt>
-				<img src="../static/images/correo.gif" alt="IMG">
-			</div>
+			<h1 class="text-cursive" id="demotext2" style = 'text-align: center;'>
+				Mandanos un email
+			</h1>
+			<!-- form.123formbuilder.com script begins here -->
+			<script type="text/javascript" defer src="https://form.123formbuilder.com/embed/6229126.js?type=lightbox" 
+			data-role="form" data-default-width="650px"data-embed-type="lightbox-image-link" 
+			data-embed-image-link="{% static 'images/correo.gif' %}"></script>
+			<!-- form.123formbuilder.com script ends here -->
 
-			<form class="contact1-form validate-form">
-				<h1 class="text-cursive" id="demotext2" style = 'text-align: center;'>
-					<br>
-					Mandanos un email
-					<br>
-					<br>
-				</h1>
 
-				<div class="wrap-input1 validate-input" data-validate = "Nombre es requerido">
-					<input class="input1" type="text" name="name" placeholder="Nombre">
-					<span class="shadow-input1"></span>
-				</div>
+			<!-- form.123formbuilder.com script begins here --><script type="text/javascript" 
+			defer src="https://form.123formbuilder.com/embed/6229126.js?type=lightbox" 
+			data-role="form" data-default-width="650px"data-embed-type="lightbox-floating-button" 
+			data-embed-image-link= "{% static 'images/img-01.png' %}"
+			data-embed-placement="1"></script>
+			<!-- form.123formbuilder.com script ends here -->
 
-				<div class="wrap-input1 validate-input" data-validate = "Ingrese email válido: ex@abc.xyz">
-					<input class="input1" type="text" name="email" placeholder="Email">
-					<span class="shadow-input1"></span>
-				</div>
+						
+			<a href="https://form.123formbuilder.com/6229126/form"  class="contact1-form validate-form" >
+				
 
-				<div class="wrap-input1 validate-input" data-validate = "Asunto es requerido">
-					<input class="input1" type="text" name="subject" placeholder="Asunto">
-					<span class="shadow-input1"></span>
-				</div>
-
-				<div class="wrap-input1 validate-input" data-validate = "Ingrese el mensaje">
-					<textarea class="input1" name="message" placeholder="Mensaje"></textarea>
-					<span class="shadow-input1"></span>
-				</div>
-
-				<div class="container-contact1-form-btn">
-					<button class="contact1-form-btn">
-						<span>
-							<h3 href="mailto:mmuller@uncaus.edu.ar" class="text-cursive" id="demotext" style = 'text-align: center;'>ENVIAR</h3>
-						</span>
-					</button>
-				</div>
-			</form>
 		</div>
-	</div>
+</div>
+
   <center>
 	<iframe 
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7115.091966543732!2d-60.06611277606331!3d-26.917900516044806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9446ba9334e6fac7%3A0x6c2d3822456263ec!2sAsocicaci%C3%B3n%20Civil%20Oportunidad%20de%20Cambio!5e0!3m2!1ses!2sar!4v1660576267431!5m2!1ses!2sar" width="1350" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -80,29 +47,6 @@
   </center>
 
 
-<!--===============================================================================================-->
-<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-<script src="../static/vendor/bootstrap/js/popper.js"></script>
-<!--===============================================================================================-->
-<script src="../static/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-<script src="../static/vendor/tilt/tilt.jquery.min.js"></script>
-<script >
-  $('.js-tilt').tilt({
-    scale: 1.1
-  })
-</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-23581568-13');
-</script>
-<!--===============================================================================================-->
-<script src="../static/js/main2.js"></script>
 </body>
 {% endblock %}
