@@ -4,11 +4,14 @@ from django.shortcuts import render
 
 from apps import noticias
 from .models import Noticia, Categoria
-from apps.comentarios.models import Comentario
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 from django.views.generic import DetailView
+
+from apps.comentarios.forms import ComentarioForm
+from apps.comentarios.models import Comentario
+from django.contrib.auth import views as auth
 # Create your views here.
 
 
@@ -148,9 +151,22 @@ def leerNoticia(request, pk):
     
     noticia = Noticia.objects.filter(id=pk)
     comentarios = Comentario.objects.filter(noticia=pk)
+    form = ComentarioForm(request.POST or None)
+    
+    
+    form = ComentarioForm(request.POST or None)
+    if form.is_valid():
+        if request.user.is_authenticated:
+            aux =  form.save(commit=False)
+            aux.news = noticia
+            aux.user = request.user
+            aux.save()
+            form = ComentarioForm()
+        else:
+            return redirect('usuario:login')
+	
 
-	 
-
+    
     context = {
 		'noticia': noticia,
 		'comentarios': comentarios,
