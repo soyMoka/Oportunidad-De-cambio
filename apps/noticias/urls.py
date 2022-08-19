@@ -16,6 +16,7 @@ urlpatterns = [
     path('mostrarImg/<str:categoria>', views.mostrarImgCat, name="mostrarCategoria"),
     path('mostrarCategorias/', views.mostrarCategorias,name = 'mostrarCategorias'),
     path('detalle/<int:pk>', views.mostrarDetalleNoticia.as_view(), name= 'mostrarDetalleNoticia'),
+    path('detalles/<int:pk>', views.leerNoticia, name= 'leerNoticia'),
     
     # Agregar categorias 
     path('agregarCategoria/', views.agregarCategoriaView.as_view(), name='agregar_categoria'),

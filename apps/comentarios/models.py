@@ -14,3 +14,7 @@ class Comentario(models.Model):
 
     def __str__(self):
         return '{}'.format(self.noticia)
+
+
+
+        

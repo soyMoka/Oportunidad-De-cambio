@@ -1,9 +1,10 @@
-from mailbox import NoSuchMailboxError
+
 from unicodedata import name
 from django.shortcuts import render
 
 from apps import noticias
 from .models import Noticia, Categoria
+from apps.comentarios.models import Comentario
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
@@ -39,7 +40,8 @@ def mostrarImg(request): # parecido a un get
     # Lista de noticias
     #noticia = Noticia.objects.all()
     noticia = Noticia.objects.order_by("-fecha")
-        #intento mostrar categorias (listas)
+       
+        # mostrar categorias (listas)
     listaDeCategorias = Categoria.objects.order_by('nombre')
 
         #----------------------------------
@@ -75,6 +77,10 @@ class modificar(UpdateView):
 class mostrarDetalleNoticia(DetailView):
     model = Noticia
     template_name = 'noticias/mostrarDetalleNoticia.html'
+  
+
+
+
 
 
 #||CATEGORIAS --------------------------------#
@@ -84,11 +90,9 @@ class agregarCategoriaView(CreateView):
     fields = '__all__'
     success_url = reverse_lazy('index')
 
-    def get_context_data(self, *args, **kwargs):
-        cat_menu = Categoria.objects.all()
-        context = super(agregarCategoriaView, self).get_context_data(*args, **kwargs)
-        context['cat_menu'] = cat_menu
-        return  context
+
+
+
 
 #-_-_-_-_-_-_-_-_-_| separador |_-_-_-_-_-_-_-_-_-
 
@@ -116,4 +120,40 @@ def CategoryList(request, cates):
 
 
 
+
+#||Vista Detalle ---------------------------------------
+""" class mostrarDetalleNoticia(DetailView):
+    model = Noticia
+    template_name = 'noticias/mostrarDetalleNoticia.html'
+    
+    
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        
+    noticia = Noticia.objects.order_by("-fecha")
+    listaDeCategorias = Categoria.objects.order_by('nombre')
+
+    return super().get_context_data(**kwargs)
+        #----------------------------------
+    
+    context = {
+        
+        'listaDeCategorias': listaDeCategorias,
+    } 
+
+    return render(request,'noticias/mostrarDetalleNoticia.html',context) """
+#############################################################################    
+
+def leerNoticia(request, pk):
+    
+    noticia = Noticia.objects.filter(id=pk)
+    comentarios = Comentario.objects.filter(noticia=pk)
+
+	 
+
+    context = {
+		'noticia': noticia,
+		'comentarios': comentarios,
+	}
+    return render(request,'noticias/leerNoticia.html', context)
 
