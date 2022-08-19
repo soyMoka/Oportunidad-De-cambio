@@ -3,6 +3,8 @@
 -[estar atentos a la version de mysql...]
 -(si da error, fijarse en el apartado de bugs en discord)
 
+probando
+
 Requisitos:
 	Python
 	PATH
