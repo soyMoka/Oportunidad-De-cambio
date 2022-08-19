@@ -7,14 +7,16 @@
     
     {% if user.is_superuser %}
 
-        <h1>Crear Categoría</h1>
+        <center>
+            <h1 style = 'margin-top:1em;'>Crear Categoría</h1>
 
-        <form method="post">
-            {% csrf_token %}
-            {{form.as_p |safe}}
-        <!-- <button class="button00" type="submit" >Crear Categoría</button>> -->
-        <input type="submit" value="Save">
-        </form>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p |safe}}
+
+            <input type="submit" value="Crear">
+            </form>
+        </center>
 
     {%else%}
 
