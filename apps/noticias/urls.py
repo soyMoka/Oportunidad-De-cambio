@@ -12,7 +12,10 @@ urlpatterns = [
     path('', views.mostrar.as_view()),
     path('modificar/<int:pk>',views.modificar.as_view(), name = 'modificar'),
     path('borrar/<int:pk>', BorrarNoticia.as_view(), name= 'borrar'),
-    path('mostrarImg/', views.mostrarImg,name = 'mostrarImg'),
+    #Orden Descendente
+    path('mostrarImg/', views.mostrarImg,name = 'mostrarImg'), 
+    #Orden Ascendente
+    path('mostrarImgAscendente/', views.mostrarImgAscendente,name = 'mostrarImgAscendente'), 
     path('mostrarImg/<str:categoria>', views.mostrarImgCat, name="mostrarCategoria"),
     path('mostrarCategorias/', views.mostrarCategorias,name = 'mostrarCategorias'),
     path('detalle/<int:pk>', views.mostrarDetalleNoticia.as_view(), name= 'mostrarDetalleNoticia'),

@@ -28,7 +28,21 @@
         </ul>
         </div>
     </div>
+</div>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Ordenar fecha:
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+        <a class="dropdown-item" href="{% url 'apps.noticia:mostrarImg' %}" >
+            Descendente 
+        </a>
+        <a class="dropdown-item" href="{% url 'apps.noticia:mostrarImgAscendente' %}">
+            Ascendente
+        </a>
     </div>
+</li>
 
 
     {% for p in noticia %}

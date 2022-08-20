@@ -39,5 +39,12 @@ user: grupo9
 password: grupo9grupo9
 
 
+### IGNORAR ### 
+[ p/ gera ]
 
-
+python -m venv .vomg
+source .vomg/Scripts/Activate
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver

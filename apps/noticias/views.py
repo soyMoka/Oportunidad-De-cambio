@@ -34,13 +34,13 @@ class agregar(CreateView):
     template_name = 'noticias/agregar.html'
     success_url = reverse_lazy('index')
 
-
-
 class mostrar(ListView):
     model = Noticia
     template_name = 'noticias/mostrar.html'
 
-def mostrarImg(request): # parecido a un get
+### ORDENAR FECHA Y MOSTRAR NOTICIAS
+
+def mostrarImg(request): #Orden Descendente
 
     # Lista de noticias
     #noticia = Noticia.objects.all()
@@ -57,6 +57,25 @@ def mostrarImg(request): # parecido a un get
     } 
 
     return render(request,'noticias/mostrarImg.html',context)
+
+def mostrarImgAscendente(request): # parecido a un get
+
+    # Lista de noticias
+    #noticia = Noticia.objects.all()
+
+    noticia = Noticia.objects.order_by("id")
+    # mostrar categorias (listas)
+    listaDeCategorias = Categoria.objects.order_by('nombre')
+
+        #----------------------------------
+    
+    context = {
+        'noticia' : noticia,
+        'listaDeCategorias': listaDeCategorias,
+    } 
+
+    return render(request,'noticias/mostrarImgAscendente.html',context)
+
 
 def mostrarImgCat(request, categoria):
     categoria2 = Categoria.objects.filter(nombre=categoria)
