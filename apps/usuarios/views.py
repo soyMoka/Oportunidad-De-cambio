@@ -9,6 +9,7 @@ class RegistrarUsuarios(CreateView):
 	model = Usuario
 	form_class = registroUsuarios
 	template_name = 'usuario/register.html'
+	success_url = reverse_lazy('apps.usuario:login')
 
 class ModificarUsuario(UpdateView):
 	model = Usuario

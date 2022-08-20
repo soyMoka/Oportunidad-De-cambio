@@ -29,31 +29,33 @@
         </div>
     {%endfor%}
 
-<hr>
-        {% include 'comentarios/agregarComentario.html' %}
-<hr>
-<hr>
-<h3>Leave a comment</h3>
+    
+{% if user.is_authenticated%}
+    <div class="addComent">
+        <h3>Leave a comment</h3>
+        
         <form method="post" style="margin-top: 1.3em;">
-          {{ comment_form.as_p }}
-          {% csrf_token %}
-          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+            {{ comment_form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
         </form>
 
-<hr>
-
-<div class="comentarios">
-    {% for coment in comentarios %}
-    <div class="comentario">
-        <br>
-        <h3>{{coment.usuario}}</h3>
-        <p>{{coment.texto}}</p>
-        <p>{{coment.created_at}}</p>
-        
-        <br>
     </div>
-    {%endfor%}
-</div>
+{%endif%}
 
+    <div class="comentarios">
+        <h3>Comentarios</h3>
+        {% for coment in comentarios %}
+        <div class="comentario">    
+            
+
+            <h4>{{coment.usuario}}</h4>
+            <p>{{coment.texto}}</p>
+            <p>{{coment.created_at}}</p>    
+            
+            
+        </div>
+        {%endfor%}
+    </div>
 
 {%endblock%}
