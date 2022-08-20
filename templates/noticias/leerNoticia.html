@@ -48,10 +48,10 @@
         {% for coment in comentarios %}
         <div class="comentario">    
             
-
             <h4>{{coment.usuario}}</h4>
             <p>{{coment.texto}}</p>
             <p>{{coment.created_at}}</p>    
+            <img src="{{coment.usuario.imagen.url}}" alt="">
             
             
         </div>
