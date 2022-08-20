@@ -3,15 +3,17 @@ from unicodedata import name
 from django.shortcuts import render
 
 from apps import noticias
+from apps.usuarios.models import Usuario
 from .models import Noticia, Categoria
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 from django.views.generic import DetailView
 
-from apps.comentarios.forms import ComentarioForm
+from apps.comentarios.forms import CommentForm
 from apps.comentarios.models import Comentario
 from django.contrib.auth import views as auth
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 
@@ -151,25 +153,31 @@ def leerNoticia(request, pk):
     
     noticia = Noticia.objects.filter(id=pk)
     comentarios = Comentario.objects.filter(noticia=pk)
-    form = ComentarioForm(request.POST or None)
+    post = get_object_or_404(Noticia, pk=pk)
+    new_comment = None
     
-    
-    form = ComentarioForm(request.POST or None)
-    if form.is_valid():
-        if request.user.is_authenticated:
-            aux =  form.save(commit=False)
-            aux.news = noticia
-            aux.user = request.user
-            aux.save()
-            form = ComentarioForm()
-        else:
-            return redirect('usuario:login')
-	
+
+    comment_form = CommentForm(data=request.POST)
+    if comment_form.is_valid(): 
+        # Create Comment object but don't save to database yet
+        new_comment = comment_form.save(commit=False)
+        # Assign the current post to the comment
+        new_comment.noticia_id= pk    
+
+        new_comment.usuario_id= request.user.id
+      
+        # Save the comment to the database
+        new_comment.save()
+    else:
+        comment_form = CommentForm()
+
 
     
     context = {
 		'noticia': noticia,
 		'comentarios': comentarios,
+        'new_comment': new_comment,
+        'comment_form': comment_form
 	}
     return render(request,'noticias/leerNoticia.html', context)
 

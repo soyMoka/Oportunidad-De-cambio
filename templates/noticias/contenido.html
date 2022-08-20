@@ -55,7 +55,7 @@
                 <p class="mb-0">
                     {{p.texto|safe |slice:":200"}} ... 
                     <br>
-                    <a href="{% url 'apps.noticia:mostrarDetalleNoticia' p.id  %}">Leer más</a>
+                    <a href="{% url 'apps.noticia:leerNoticia' p.id  %}">Leer más</a>
                 </p>
                 </div>
             </div>
