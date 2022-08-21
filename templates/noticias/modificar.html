@@ -12,6 +12,8 @@
 
 {% block contenido %}
 
+{% if user.is_authenticated and user.is_superuser %}
+
 <div class="main-container" style = 'margin-left: 14%;margin-right: 13%;margin-top: 2%; text-align: justify;'>
     <h1>Modificar Noticia</h1>
 
@@ -26,5 +28,6 @@
     </form>
 
 </div>
+{% endif %}
 
 {% endblock %}

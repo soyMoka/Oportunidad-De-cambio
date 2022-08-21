@@ -4,6 +4,7 @@
 {% block titulo %} Borrar usuario {% endblock %}
 
 {% block contenido %}
+    {% if user.is_authenticated and user.is_superuser %}
     <center style = 'margin-top: 4em'>
         <div class="main-container">
             <h1>Borrar usuario</h1>
@@ -17,4 +18,5 @@
     
         </div>
     </center>
+    {% endif %}
 {% endblock %}
