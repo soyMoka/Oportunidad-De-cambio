@@ -53,8 +53,15 @@
             <p>{{coment.created_at}}</p>    
             <img src="{{coment.usuario.imagen.url}}" alt="">
             
-            
+                {% if user.is_authenticated and user.is_superuser %}
+                <button type="button" class="btn btn-danger">
+                    <a href='{% url 'apps.usuario:eliminar' coment.usuario.id %}' style = 'color:white'> Borrar </a>
+                </button>
+                {% endif %}    
+         
+
         </div>
+
         {%endfor%}
     </div>
 
