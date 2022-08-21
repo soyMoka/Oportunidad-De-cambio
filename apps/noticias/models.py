@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from apps.usuarios.models import Usuario
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=250, null=False, verbose_name="Nombre")
@@ -9,6 +10,7 @@ class Categoria(models.Model):
 
 # Create your models here.
 class Noticia(models.Model):
+
     titulo = models.CharField(max_length=250, null=False)
     fecha = models.DateTimeField(auto_now_add=True)
     texto = RichTextField(null=False)

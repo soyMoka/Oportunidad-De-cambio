@@ -11,6 +11,7 @@
 
 
 
+
 <div class="col-lg-3 stretch-card grid-margin">
     <div class="card">
         <div class="card-body">
@@ -22,6 +23,11 @@
             {% for categoria in listaDeCategorias %}
             <!-- Se puede dar estilo al link de abajo y se aplica a todas las categorías -->
             <li><a href="{% url 'apps.noticia:filtrarCategoria' categoria %}">{{categoria}}</a></li>
+                {% if user.is_authenticated and user.is_superuser %}
+                    <button type="button" class="btn btn-danger">
+                        <a href='{% url 'apps.noticia:borrarCategoria' categoria.id %}' style = 'color:white'> Borrar </a>
+                    </button>
+                {% endif %}    
             {%endfor%}
             <!-- ----------------------------- -->
 

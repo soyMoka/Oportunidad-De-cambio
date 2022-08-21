@@ -115,6 +115,12 @@ class agregarCategoriaView(CreateView):
     success_url = reverse_lazy('index')
 
 
+class borrarCategoria(DeleteView):
+    model = Categoria
+    template_name = 'noticias/borrarCategoria.html'
+    fields = '__all__'
+    success_url = reverse_lazy('index')
+
 
 
 
