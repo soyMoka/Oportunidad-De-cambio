@@ -25,7 +25,7 @@
             <li><a href="{% url 'apps.noticia:filtrarCategoria' categoria %}">{{categoria}}</a></li>
                 {% if user.is_authenticated and user.is_superuser %}
                     <button type="button" class="btn btn-danger">
-                        <a href='{% url 'apps.noticia:borrarCategoria' categoria.id %}' style = 'color:white'> Borrar usuario </a>
+                        <a href='{% url 'apps.noticia:borrarCategoria' categoria.id %}' style = 'color:white'> Borrar </a>
                     </button>
                 {% endif %}    
             {%endfor%}
