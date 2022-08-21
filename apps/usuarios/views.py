@@ -16,6 +16,7 @@ class ModificarUsuario(UpdateView):
 	form_class = registroUsuarios
 	template_name = 'usuario/modificar.html'
 
+
 class BorrarUsuario(DeleteView):
 	model = Usuario
 	template_name = 'usuario/usuario_confirm_delete.html'
