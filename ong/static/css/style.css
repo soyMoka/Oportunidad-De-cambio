@@ -486,8 +486,8 @@ h1, h2, h3, h4, h5,
   padding: 1rem; }
   @media (max-width: 991.98px) {
     .site-navbar {
-      padding-top: 3rem;
-      padding-bottom: 3rem; } }
+      padding-top: 1rem;
+      padding-bottom: 1rem; } }
   .site-navbar .toggle-button {
     position: absolute;
     right: 0px; }
@@ -588,7 +588,7 @@ h1, h2, h3, h4, h5,
           list-style: none;
           padding: 0;
           margin: 0;
-          min-width: 200px; }
+          min-width: 80px; }
           .site-navbar .site-navigation .site-menu .has-children .dropdown > li > a {
             padding: 9px 20px;
             display: block; }
@@ -681,13 +681,12 @@ h1, h2, h3, h4, h5,
     position: relative; }
     .site-mobile-menu .site-nav-wrap a {
       padding: 10px 20px;
-      display: block;
-      position: relative;
-      color: #212529; }
+
+      color: #26973b; }
       .site-mobile-menu .site-nav-wrap a:hover {
         color: #00a651; }
     .site-mobile-menu .site-nav-wrap li {
-      position: relative;
+
       display: block; }
       .site-mobile-menu .site-nav-wrap li .nav-link.active {
         color: #00a651; }
@@ -1905,8 +1904,8 @@ h1, h2, h3, h4, h5,
   }
 @media (max-width: 992px) {
   .navbar-logo-acoc {
-    width: 200px;
-    height: 80px;
+    width: 140px;
+    height: 60px;
   }
   #demotext {
     font-size: 4rem;
