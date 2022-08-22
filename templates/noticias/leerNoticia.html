@@ -3,19 +3,21 @@
 
 {%block contenido%}
 
-
     {%for p in noticia%}
         <div class="contenido">
-            
-            <h1>{{p.titulo}}</h1>
-            
-            {{p.categoria}}
-            
-            <img class="news_img" src="{{p.imagen.url}}" alt="">
-            
-            {{p.texto|safe}}
-            
-            
+            <div class="container">
+                <br>
+                <style type="text/css">  
+                    .transformacion2 { text-transform: uppercase;}   
+                    .bt2{padding:6px;border-radius:10px;width: 100px;}
+                    .btr{background-color:red;color:white;}
+                </style> 
+                {{p.fecha}}
+                <h6 class="bt2 btr" style = 'text-align: center;'>{{p.categoria}}</h6>
+                <h1 class="transformacion2" class="text-cursive" id="demotext2" style = 'text-align: center;'>{{p.titulo}}</h1>
+                <center><img class="news_img" src="{{p.imagen.url}}" alt="" class="img-fluid"></center>
+                {{p.texto|safe}}
+            </div>
             <!-- boton editar -->
             {% if user.is_authenticated %}
                 {% comment %}
@@ -29,40 +31,56 @@
         </div>
     {%endfor%}
 
-    
-{% if user.is_authenticated%}
-    <div class="addComent">
-        <h3>Leave a comment</h3>
-        
-        <form method="post" style="margin-top: 1.3em;">
-            {{ comment_form.as_p }}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-        </form>
-
+    <div class="container"> 
+        <br>
+        <h3 class="text-cursive" id="demotext2">COMENTARIOS</h3>
+        <hr hr size="2px" noshade="noshade" align="right"/>
     </div>
-{%endif%}
 
-    <div class="comentarios">
-        <h3>Comentarios</h3>
-        {% for coment in comentarios %}
-        <div class="comentario">    
+    {% if user.is_authenticated%}
+        <div class="container">
+            <div class="addComent">
+                <h3 id="demotext2">Deja un comentario</h3>
+                <form method="post" style="margin-top: 1.3em;">
+                    <h5><textarea name="texto" cols="108" rows="1" maxlength="200"></textarea>
+                    {% csrf_token %}</h5>
+                    <button type="submit" class="btn btn-primary  btn-lg">Enviar</button>
+                </form>
+            </div>
+        </div>
+    {%endif%}
+
+    <div class="container">
+        <div class="comentarios">
             
-            <h4>{{coment.usuario}}</h4>
-            <p>{{coment.texto}}</p>
-            <p>{{coment.created_at}}</p>    
-            <img src="{{coment.usuario.imagen.url}}" alt="">
+            {% for coment in comentarios %}
+            
+            <div class="comentario">    
+                <br>
+                <h5 class="transformacion2">{{coment.usuario}}</h5>
+                <div class="row">
+                    <div class="col-md-1">
+                        <img src="{{coment.usuario.imagen.url}}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-11 ml-auto">
+                        <p>{{coment.texto}}</p>
+                    </div>
+                    <br>
+                </div> 
+                <p>{{coment.created_at}}</p>   
+                <hr hr size="2px" width="80%" color="#3DCE63" align="left"/>
             
                 {% if user.is_authenticated and user.is_superuser %}
                 <button type="button" class="btn btn-danger">
                     <a href='{% url 'apps.usuario:eliminar' coment.usuario.id %}' style = 'color:white'> Borrar Usuario </a>
                 </button>
                 {% endif %}    
-         
+            
 
+            </div>
+
+            {%endfor%}
         </div>
-
-        {%endfor%}
     </div>
 
 {%endblock%}

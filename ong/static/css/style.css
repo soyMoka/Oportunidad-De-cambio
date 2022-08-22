@@ -1870,3 +1870,12 @@ h1, h2, h3, h4, h5,
   margin-right: 60px;
   }
 
+  .botonarriba{
+    background:#76aadb;
+    bottom:0px;
+    display: block;
+    height: 50px;
+    position: fixed;
+    right:0px;
+    width:50px;
+  }
