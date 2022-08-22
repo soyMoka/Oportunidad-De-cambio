@@ -90,8 +90,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ongdb',
         'USER': 'root',
-        #'PASSWORD': 'root',
-        'PASSWORD': '123321q',
+        'PASSWORD': 'root',
+        #'PASSWORD': '123321q',
         #'PASSWORD': 'muma2208',
         #'PASSWORD': 'password', # soyMoka
         'HOST': 'localhost',
@@ -174,6 +174,10 @@ CKEDITOR_CONFIGS = {
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+ALLOWED_HOSTS = ['*']
+
 
 #import django_heroku
 
