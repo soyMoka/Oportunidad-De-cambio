@@ -8,4 +8,3 @@ apps/usuarios/__pycache__/*
 apps/comentarios/migrations/__pycache__/*
 apps/comentarios/__pycache__/*
 ong/local.py
-ong/settings.py
