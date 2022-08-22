@@ -98,12 +98,24 @@ WSGI_APPLICATION = 'ong.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd6o4on3danipdu',
         'USER': 'lgqfdnkeyscpdx',
         'PASSWORD': '8ad3cd40e053d9e270d2d2d2a85188c7b247c70727c8cc592ad393a6f2a47cad',
         'HOST': 'ec2-54-87-179-4.compute-1.amazonaws.com',
         'PORT': '5432',
+=======
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ongdb',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        #'PASSWORD': '123321q',
+        #'PASSWORD': 'muma2208',
+        #'PASSWORD': 'password', # soyMoka
+        'HOST': 'localhost',
+        'PORT': '',
+>>>>>>> 509febc93e9ea48374d2e4765d5a5cfa27d739b1
     }
 }
 
@@ -174,7 +186,15 @@ CKEDITOR_CONFIGS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 import django_heroku
+=======
+
+ALLOWED_HOSTS = ['*']
+
+
+#import django_heroku
+>>>>>>> 509febc93e9ea48374d2e4765d5a5cfa27d739b1
 
 django_heroku.settings(locals())
 CSRF_TRUSTED_ORIGINS = ["https://ocac.herokuapp.com"]
