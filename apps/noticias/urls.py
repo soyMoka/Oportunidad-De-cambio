@@ -1,5 +1,4 @@
 from django.urls import path
-from .views import BorrarNoticia
 from . import views
 
 from django.conf.urls import include, url
@@ -11,7 +10,7 @@ urlpatterns = [
     path('mostrar/', views.mostrar.as_view(), name = 'mostrar'),
     path('', views.mostrar.as_view()),
     path('modificar/<int:pk>',views.modificar.as_view(), name = 'modificar'),
-    path('borrar/<int:pk>', BorrarNoticia.as_view(), name= 'borrar'),
+    path('borrar/<int:pk>', views.BorrarNoticia.as_view(), name= 'borrar'),
     #Orden Descendente
     path('mostrarImg/', views.mostrarImg,name = 'mostrarImg'), 
     #Orden Ascendente

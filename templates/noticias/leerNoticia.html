@@ -15,7 +15,7 @@
                 {{p.fecha}}
                 <h6 class="bt2 btr" style = 'text-align: center;'>{{p.categoria}}</h6>
                 <h1 class="transformacion2" class="text-cursive" id="demotext2" style = 'text-align: center;'>{{p.titulo}}</h1>
-                <center><img class="news_img" src="{{p.imagen.url}}" alt="" class="img-fluid"></center>
+                <img class="news_img text-align-center mx-auto d-block img-fluid rounded" src="{{p.imagen.url}}" alt="" >
                 {{p.texto|safe}}
             </div>
             <!-- boton editar -->
@@ -42,7 +42,7 @@
             <div class="addComent">
                 <h3 id="demotext2">Deja un comentario</h3>
                 <form method="post" style="margin-top: 1.3em;">
-                    <h5><textarea name="texto" cols="108" rows="1" maxlength="200"></textarea>
+                    <h5><textarea name="texto" cols="108" rows="1" maxlength="100"></textarea>
                     {% csrf_token %}</h5>
                     <button type="submit" class="btn btn-primary  btn-lg">Enviar</button>
                 </form>
@@ -72,8 +72,13 @@
             
                 {% if user.is_authenticated and user.is_superuser %}
                 <button type="button" class="btn btn-danger">
-                    <a href='{% url 'apps.usuario:eliminar' coment.usuario.id %}' style = 'color:white'> Borrar Usuario </a>
+                    <a href="{% url 'apps.usuario:eliminar' coment.usuario.id %}" style = 'color:white'> Borrar Usuario </a>
                 </button>
+              
+                <button type="button" class="btn btn-danger">
+                    <a href="{% url 'apps.comentarios:delComentario' coment.id %}" style = 'color:white'> Borrar Comentario </a>
+                </button>   
+                
                 {% endif %}    
             
 
