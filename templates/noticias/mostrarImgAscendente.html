@@ -9,6 +9,12 @@
 {% block contenido %}
 
 
+<ul class="list-inline">
+    <li class="list-inline-item"><a class="social-icon text-xs-center" target="_blank" href="#">AAAAA</a></li>
+    <li class="list-inline-item"><a class="social-icon text-xs-center" target="_blank" href="#">BBBBB</a></li>
+    <li class="list-inline-item"><a class="social-icon text-xs-center" target="_blank" href="#">CCCCC</a></li>
+ </ul>
+ 
 
 
 <div class="col-lg-3 stretch-card grid-margin">
@@ -53,28 +59,44 @@
             <div class="card">
                 <div class="card-body" >
                 <div class="row">
-
+                    
                     <div class="col-sm-4 grid-margin">
+                        <span class="badge badge-danger font-weight-bold">
+                            <a style = 'color:white;' href="{% url 'apps.noticia:filtrarCategoria' p.categoria %}">{{p.categoria}}</a>
+                        </span>
                     <div class="position-relative">
 
                         <div class="rotate-img">
                             {% if p.imagen %}
                                 <img
                                     src="{{ p.imagen.url }}"
-                                    alt="thumb"
+                                    alt="Sin imagen"
                                     class="img-fluid"
+                                    style = '
+                                            height:100%;
+                                            width:100%; 
+                                            max-height:295px;
+                                            max-width:360px; 
+                                            object-fit: cover;                                       
+                                            '
                                 />
                             {% else %}
                                 <img
                                 src="noticia/default.png"
-                                alt="thumb"
+                                alt="Sin imagen"
                                 class="img-fluid"
+                                style = '
+                                            height:100%;
+                                            width:100%; 
+                                            max-height:295px;
+                                            max-width:360px; 
+                                            object-fit: cover;                                       
+                                            '
                                 />
                             {% endif %}
                         </div>
                         <div class="badge-positioned">
-                        <span class="badge badge-danger font-weight-bold"
-                            ><a href="{% url 'apps.noticia:filtrarCategoria' p.categoria %}">{{p.categoria}}</a></span>
+                        
                         </div>
                     </div>
                     </div>
@@ -82,10 +104,18 @@
                     <div class="col-sm-8  grid-margin">
 
                     {% if user.is_superuser %}
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger" style = 'position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        margin-right:20px;
+                        '>
                             <a href='{% url 'apps.noticia:borrar' p.id %}' style = 'color:white'> Borrar </a>
                         </button>
-                        <button type="button" class="btn btn-secondary">
+                        <button type="button" class="btn btn-secondary" style = 'position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        margin-right:100px;
+                        '>
                             <a href='{% url 'apps.noticia:modificar' p.id %}' style = 'color:white;'> Editar </a>
                         </button>
                     
