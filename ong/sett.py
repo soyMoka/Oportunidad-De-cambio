@@ -81,14 +81,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ong.wsgi.application'
 
+
+# Database
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd6o4on3danipdu',
-        'USER': 'lgqfdnkeyscpdx',
-        'PASSWORD': '8ad3cd40e053d9e270d2d2d2a85188c7b247c70727c8cc592ad393a6f2a47cad',
-        'HOST': 'ec2-54-87-179-4.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'localhost',
+        'NAME': 'ongdb',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        #'PASSWORD': '123321q',
+        #'PASSWORD': 'muma2208',
+        #'PASSWORD': 'password', # soyMoka
+        'PORT': '',
     }
 }
 
@@ -159,7 +166,4 @@ CKEDITOR_CONFIGS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import django_heroku
-
-django_heroku.settings(locals())
-CSRF_TRUSTED_ORIGINS = ["https://ocac.herokuapp.com"]
+ALLOWED_HOSTS = ['*']
