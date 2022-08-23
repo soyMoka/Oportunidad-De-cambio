@@ -107,6 +107,7 @@ celerybeat.pid
 .venv
 .venv/
 .venv/*
+vomg/
 .vomg/
 .vomg/*
 env/
