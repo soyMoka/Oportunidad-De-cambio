@@ -24,8 +24,8 @@ SECRET_KEY = 'django-insecure-x(-370v=(4*-vrrb42v(ss7r+1*)j1nn3b#3%p*n+)3ks6tnfk
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = ['https://ocac.herokuapp.com']
-DEBUG = False
-#DEBUG = True
+#DEBUG = False
+DEBUG = True
 #ACA ES EL DIRECTORIO DE LOS ARCHIVOS ESTATICOS PARA EL INDEX
 
 AUTH_USER_MODEL = 'usuarios.Usuario'
