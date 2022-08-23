@@ -85,17 +85,6 @@ WSGI_APPLICATION = 'ong.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'ongdb',
-#         'USER': 'root',
-#         'PASSWORD': '7ux3r0.890',
-#          'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
