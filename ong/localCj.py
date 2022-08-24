@@ -91,10 +91,10 @@ DATABASES = {
         'HOST': 'localhost',
         'NAME': 'ongdb',
         'USER': 'root',
-        'PASSWORD': 'root',
+        #'PASSWORD': 'root',
         #'PASSWORD': '123321q',
         #'PASSWORD': 'muma2208',
-        #'PASSWORD': 'password', # soyMoka
+        'PASSWORD': 'password', # soyMoka
         'PORT': '',
     }
 }
@@ -130,7 +130,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
- 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

@@ -24,6 +24,10 @@ urlpatterns = [
     path('agregarCategoria/', views.agregarCategoriaView.as_view(), name='agregar_categoria'),
     path('categorias/<str:cates>', views.CategoryList, name='filtrarCategoria'),
     #Borrar categorias
-    path('borrarCategoria/<int:pk>', views.borrarCategoria.as_view() , name = 'borrarCategoria')
+    path('borrarCategoria/<int:pk>', views.borrarCategoria.as_view() , name = 'borrarCategoria'),
+
+    #Borrar comentario
+    path('borrarComentario/<int:pk>', views.deleteComentario.as_view(), name='delComentario'),
+
 
 ]

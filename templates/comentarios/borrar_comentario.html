@@ -17,12 +17,37 @@
     {% if user.is_authenticated and user.is_superuser %}
 
     <div class="main-container" style = 'margin-left: 14%;margin-right: 13%;margin-top: 2%; text-align: justify;'>
-        <h1>Borrar categoria "{{ object }}"</h1>
+        <h2>Usted esta por borrar el siguiente comentario: </h2>
+        
+        <!-- Vista previa Comentario  -->
+        <div class="container border border-danger rounded  mb-3">
+            <div class="comentarios">
+                <div class="comentario">    
+                    <br>
+                    <h5 class="transformacion2" >{{object.usuario}}</h5>
+                    
+                    <div class="row">
+                        <div class="col-md-1">
+                            <img src="{{object.usuario.imagen.url}}" alt="" class=" object-fit-contain rounded-circle img-fluid" >
+                        </div>
+                        <div class="col-md-11 ml-auto">
+                            <p>{{object.texto}}</p>
+                        </div>
+                        <br>
+                    </div> 
+                    
+                    <p class="text-right small" >{{coment.created_at}}</p>   
+                    <hr style="border-top:3px dashed #00000021; width:90%; align:center;"/>
+                </div>
+            </div> 
+        </div>   
+        <!-- Fin de vista previa -->
 
+        
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <strong> Estas Seguro? </strong>
-            <button class="btn btn-secondaryy"> Borrar categoria! </button>
+            <button class="btn btn-danger"> Si!, Comentario! </button>
 
         </form>
 

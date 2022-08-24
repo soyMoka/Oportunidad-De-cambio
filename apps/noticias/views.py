@@ -206,3 +206,10 @@ def leerNoticia(request, pk):
 	}
     return render(request,'noticias/leerNoticia.html', context)
 
+
+############## || Borrar comentario (pruebo si poniendolo acá no da error)
+class deleteComentario(DeleteView):
+	model = Comentario
+	template_name = 'comentarios/borrar_comentario.html'
+	success_url = reverse_lazy('index')
+

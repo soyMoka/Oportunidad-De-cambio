@@ -33,16 +33,16 @@
 
     <div class="container"> 
         <br>
-        <h3 class="text-cursive" id="demotext2">COMENTARIOS</h3>
-        <hr hr size="2px" noshade="noshade" align="right"/>
+        <h3 class="text-cursive" id="demotext2" style=" font-size: 2.5em;">COMENTARIOS</h3>
+        <hr style=""/>
     </div>
 
     {% if user.is_authenticated%}
         <div class="container">
             <div class="addComent">
-                <h3 id="demotext2">Deja un comentario</h3>
+                <h3 id="demotext2"  style=" font-size: 1.5em;">Deja un comentario</h3>
                 <form method="post" style="margin-top: 1.3em;">
-                    <h5><textarea name="texto" cols="108" rows="1" maxlength="100"></textarea>
+                    <h5><textarea name="texto" cols="50" rows="4" maxlength="100"></textarea>
                     {% csrf_token %}</h5>
                     <button type="submit" class="btn btn-primary  btn-lg">Enviar</button>
                 </form>
@@ -51,24 +51,24 @@
     {%endif%}
 
     <div class="container">
-        <div class="comentarios">
+        <div class="comentarios ">
             
             {% for coment in comentarios %}
             
-            <div class="comentario">    
+            <div class="comentario p-1 ">    
                 <br>
                 <h5 class="transformacion2">{{coment.usuario}}</h5>
                 <div class="row">
                     <div class="col-md-1">
-                        <img src="{{coment.usuario.imagen.url}}" alt="" class="img-fluid">
+                        <img src="{{coment.usuario.imagen.url}}" alt="" class=" object-fit-contain rounded-circle img-fluid">
                     </div>
                     <div class="col-md-11 ml-auto">
                         <p>{{coment.texto}}</p>
                     </div>
                     <br>
                 </div> 
-                <p>{{coment.created_at}}</p>   
-                <hr hr size="2px" width="80%" color="#3DCE63" align="left"/>
+                <p class="text-right small" >{{coment.created_at}}</p>   
+                <hr style="border-top:3px dashed #00000021; width:90%; align:center;"/>
             
                 {% if user.is_authenticated and user.is_superuser %}
                 <button type="button" class="btn btn-danger">
@@ -76,7 +76,7 @@
                 </button>
               
                 <button type="button" class="btn btn-danger">
-                    <a href="{% url 'apps.comentarios:delComentario' coment.id %}" style = 'color:white'> Borrar Comentario </a>
+                    <a href="{% url 'apps.noticia:delComentario' coment.id %}" style = 'color:white'> Borrar Comentario </a>
                 </button>   
                 
                 {% endif %}    
