@@ -8,36 +8,26 @@
 
 {% block contenido %}
 
-{% comment %} 
-<ul class="list-inline">
-    <li class="list-inline-item"><a class="social-icon text-xs-center" target="_blank" href="#">AAAAA</a></li>
-    <li class="list-inline-item"><a class="social-icon text-xs-center" target="_blank" href="#">BBBBB</a></li>
-    <li class="list-inline-item"><a class="social-icon text-xs-center" target="_blank" href="#">CCCCC</a></li>
- </ul>
-  {% endcomment %}
 
+<!-- ||Categorias -------------------------->        
 
- <center>
+<div class="" style=" margin-top: 2em ;  text-align: center;">
+    <p style="font-size: 2em;">Categorías</p>
+    <ul class="vertical-menu" style="display: flex ; width: 90%; justify-content: space-around; flex-wrap: wrap;">                
+        
+        <!--# Acá se listan las categorías -->
+        
+        {% for categoria in listaDeCategorias %}
+        <!-- Se puede dar estilo al link de abajo y se aplica a todas las categorías -->
+        <li style="display: inline-block ; margin: 0.3em;"><a class="btn btn-outline-info" 
+            href="{% url 'apps.noticia:filtrarCategoria' categoria %}">{{categoria}}</a></li>
+        {%endfor%}
 
-<div class="col-lg-3 stretch-card grid-margin">
-    <div class="card">
-        <div class="card-body">
-        <h2>Categorías</h2>
-        <ul class="vertical-menu">                
-            
-            <!--# Acá se listan las categorías -->
-            
-            {% for categoria in listaDeCategorias %}
-            <!-- Se puede dar estilo al link de abajo y se aplica a todas las categorías -->
-            <li><a href="{% url 'apps.noticia:filtrarCategoria' categoria %}">{{categoria}}</a></li>
-            {%endfor%}
-
-        </ul>
-        </div>
-    </div>
+    </ul>
 </div>
 
-</center>
+<!-- END Categorias -------------------------->
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Ordenar fecha:

@@ -37,7 +37,7 @@
                     </div> 
                     
                     <p class="text-right small" >{{coment.created_at}}</p>   
-                    <hr style="border-top:3px dashed #00000021; width:90%; align:center;"/>
+                    <hr style="border-top:3px dashed #00000021; width:90%; text-align:center;"/>
                 </div>
             </div> 
         </div>   
@@ -54,9 +54,10 @@
     </div>
 
     {% else %}
-        <center style = 'margin-top:2em'>
+        <div style = 'margin-top:2em; margin-left: auto; margin-right: auto;', >
+
             <h1>No posee los permisos necesarios para realizar esta accion</h1>
-        </center>
+        </div>
     {% endif %}
 
 {% endblock %}
