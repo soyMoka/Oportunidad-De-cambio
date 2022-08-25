@@ -34,7 +34,7 @@
     <div class="container"> 
         <br>
         <h3 class="text-cursive" id="demotext2" style=" font-size: 2.5em;">COMENTARIOS</h3>
-        <hr style=""/>
+        <hr />
     </div>
 
     {% if user.is_authenticated%}
@@ -68,7 +68,7 @@
                     <br>
                 </div> 
                 <p class="text-right small" >{{coment.created_at}}</p>   
-                <hr style="border-top:3px dashed #00000021; width:90%; align:center;"/>
+                <hr style="border-top:3px dashed #00000021; width:90%; text-align:center;"/>
             
                 {% if user.is_authenticated and user.is_superuser %}
                 <button type="button" class="btn btn-danger">
