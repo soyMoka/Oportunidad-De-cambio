@@ -14,7 +14,7 @@
     {{noticia.texto|safe}}
     
     
-    <!-- boton editar -->
+    <!-- boton editar y borrar-->
     {% if user.is_authenticated %}
         {% comment %}
         <br>
@@ -22,7 +22,7 @@
         <a class="admin button01" href="{% url 'apps.noticia/borrar:borrar' p.id  %}">Borrar post</a>
         {% endcomment %}
     {% endif %}<!-- user.auth -->
-    <!-- END boton editar -->
+    <!-- END boton editar y borrar-->
 
 </div>
 

@@ -1,0 +1,27 @@
+
+<!-- Boton para Borrar -->
+
+<button type="button" class="btn btn-danger position-absolute" style = '
+bottom: 0;
+right: 0;
+margin-right:20px;
+'
+onclick=" window.location.href='{% url 'apps.noticia:borrar' p.id %}'"
+>
+Borrar
+</button>
+
+<!-- END - Boton para Borrar -->
+
+<!-- Boton para Editar -->
+
+<button type="button" class="btn btn-secondary" style = 'position: absolute;
+bottom: 0;
+right: 0;
+margin-right:100px;
+'
+onclick=" window.location.href='{% url 'apps.noticia:modificar' p.id %}'"
+>
+Editar
+</button>
+<!-- END - Boton para Editar -->
