@@ -1,0 +1,23 @@
+<div class="" style=" margin-top: 2em ;  text-align: center;">
+    <p style="font-size: 2em;">Categorías</p>
+    <ul class="vertical-menu" style="display: flex ; width: 90%; justify-content: space-around; flex-wrap: wrap;">                
+        
+        <!--# Acá se listan las categorías -->
+        
+        {% for categoria in listaDeCategorias %}
+        
+        
+        
+        <div>
+            <!-- Se puede dar estilo al link de abajo y se aplica a todas las categorías -->
+            <li style="display: inline-block ; margin: 0.3em;"><a class="btn btn-outline-primary" href="{% url 'apps.noticia:filtrarCategoria' categoria %}">{{categoria}}</a></li>
+            
+            <!-- este es el cartel de eliminar categoría -->
+            {% if user.is_superuser %}
+            <a class="text-danger " href="{% url 'apps.noticia:borrarCategoria' categoria.id %} ">borrar</a>       
+            {% endif %}
+        </div>
+        {%endfor%}
+
+    </ul>
+</div>

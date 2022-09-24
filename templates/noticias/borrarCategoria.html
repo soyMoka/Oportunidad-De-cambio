@@ -5,7 +5,7 @@
 <!-- head -->
 
     {% block titulo %}
-        Borrar - Noticias
+        Borrar - Categoría
     {% endblock %}
 
 <!-- body -->
@@ -21,8 +21,8 @@
 
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <strong> Estas Seguro? </strong>
-            <button class="btn btn-secondaryy"> Borrar categoria! </button>
+            <strong> Estas Seguro que desea borrar la categoría <span class="text-white font-weight-bold  p-2 bg-primary" >"{{ object }}"</span> ? </strong>
+            <button class="btn btn-danger "> Borrar categoria! </button>
 
         </form>
 
