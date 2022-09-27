@@ -15,7 +15,7 @@
         
         {% for cat in c %} 
         <!-- Se puede dar estilo al link de abajo y se aplica a todas las categorías -->
-        <li style="display: inline-block ; margin: 0.3em;"><a class="btn btn-outline-info" 
+        <li style="display: inline-block ; margin: 0.3em;"><a class="btn btn-outline-info btn-sm" 
             href="{% url 'apps.noticia:filtrarCategoria' cat %}">{{cat}}</a></li>
         {%endfor%}
 
